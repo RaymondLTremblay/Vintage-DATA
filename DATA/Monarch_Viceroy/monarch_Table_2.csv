@@ -1,0 +1,21 @@
+﻿Buterrfly ,Birds,MeanTimeSeize,Num_Buterflies_Seized ,Num_Butterflies_not_seized
+Monarch ,E1,9,12,76
+Monarch ,E2,27,25,48
+Monarch ,E3,36,24,69
+Monarch ,E4,12,72,12
+Viceroy,E1,14,2,14
+Viceroy,E2,20,1,12
+Viceroy,E3,22,3,12
+Viceroy,E4,30,12,4
+Non_mimeticbutterflies,E1,1,102,0
+Non_mimeticbutterflies,E2,1,84,0
+Non_mimeticbutterflies,E3,2,108,0
+Non_mimeticbutterflies,E4,3,100,0
+Monarch ,C1,8,25,0
+Monarch ,C2,5,25,0
+Monarch ,C3,10,16,9
+Monarch ,C4,11,24,1
+Viceroy,C1,3,92,0
+Viceroy,C2,5,95,0
+Viceroy,C3,1,101,0
+Viceroy,C4,6,94,0
