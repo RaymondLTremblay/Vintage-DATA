@@ -3,7 +3,7 @@
     "path": "~/My Drive/GitHub_Google_Drive/GitHub/Vintage_DATA/Index.Rmd",
     "project_path": "Index.Rmd",
     "type": "r_markdown",
-    "hash": "576198913",
+    "hash": "2954818746",
     "contents": "",
     "dirty": false,
     "created": 1634047666534.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "19,15",
-        "scrollLine": "11"
+        "cursorPosition": "32,237",
+        "scrollLine": "20"
     },
     "folds": "",
-    "lastKnownWriteTime": 1634050676,
+    "lastKnownWriteTime": 1634058311,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1634050676328,
+    "last_content_update": 1634058311073,
     "read_only": false,
     "read_only_alternatives": []
 }
