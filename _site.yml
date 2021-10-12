@@ -1,0 +1,15 @@
+--- 
+name: BIOL4026
+navbar: 
+  left: 
+    - 
+      href: Descripcion.html
+      text: Home
+    - 
+      menu: 
+        - 
+          href: Karn_Penrose.html
+          text: Karn_Penrose
+      text: "Los Datos"
+  title: "Vintage Data"
+output_dir: "."

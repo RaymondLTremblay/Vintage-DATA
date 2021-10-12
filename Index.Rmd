@@ -1,0 +1,32 @@
+---
+title: "Vintage Data"
+output:
+  html_document:
+    css: tutorial.css
+    fig_caption: yes
+    highlight: pygments
+#  theme: simplex   To have the TOC in Red
+    toc: yes
+    toc_float: yes
+---
+
+
+# Contact Person
+
+Raymond L. Tremblay, PhD
+raymond.tremblay_at_gmail.com
+
+ANALITICA Fundación, Inc
+kljhv;oahjgv;ad
+no
+
+
+***
+
+# Vintage Data
+
+The following Website brings to life data that we call **Vintage Data**. The objective is to bring data have been avaliable in different published manuscripts. The published papers have within the manuscript raw data in form of tables, and these were transfered to Excel Files and is now avaliable to for all to use. All data will be available to the public.  
+
+***
+
+It is our hope that these data can used in Statistical and Data Science exploration.  
