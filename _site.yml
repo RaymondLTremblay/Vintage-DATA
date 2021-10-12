@@ -8,7 +8,7 @@ navbar:
     - 
       menu: 
         - 
-          href: Karn_Penrose.html
+          href: Organized_Data.html
           text: Karn_Penrose
       text: "Los Datos"
   title: "Vintage Data"
