@@ -60,6 +60,14 @@ df2<- untable(df[,c(1,2,5,4)], num = df[,2])%>%
   filter(survivors >0)%>%
   mutate(Survivors = ifelse(survivors >0, 1))
 df3 <- merge(df1, df2)
-head(df3)
+df3
+unique(df3$dead)
+```
+
+
+
+
+```{r}
+7.424e-4
 ```
 
