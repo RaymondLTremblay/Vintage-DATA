@@ -9,7 +9,13 @@ navbar:
       menu: 
         - 
           href: Organized_Data.html
-          text: Karn_Penrose
-      text: "Los Datos"
+          text: 'Karn Penrose Mothers Age'
+        -
+          href: Parity.html
+          text: 'Karn Penrose Parity'
+        -
+          href: Birth_Weight.html
+          text: 'Karn Penrose Gestation Time'
+      text: "Los datos"
   title: "Vintage Data"
 output_dir: "."
