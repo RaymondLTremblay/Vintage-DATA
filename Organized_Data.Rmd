@@ -26,7 +26,7 @@ Sys.Date()
 
 ## Objective 
 
-This Rmd is to learn how to format the data prior to analyses.  The data are collected form the Karn and Penrose, in the same structure they present in the paper, for analysis they needed to be wrangled for effective analysis in R and RStudio.
+This Rmd is to learn how to format the data prior to analyses.  The data are collected from the Karn and Penrose paper, in the same structure they are present in the paper, for analysis they needed to be wrangled for effective analysis in R and RStudio.
 
 
 
@@ -101,7 +101,8 @@ df5 %>% arrange(mother_age)
 row.names(df5)<-NULL  # this removes the row names
 df5 %>% arrange(mother_age)
 ```
-The above functions are now to be applied to the data sets of Karn and Penrose
+
+- The above functions are now to be applied to the data sets of Karn and Penrose
 
 
 ***
