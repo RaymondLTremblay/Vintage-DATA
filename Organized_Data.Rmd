@@ -108,7 +108,8 @@ The above functions are now to be applied to the data sets of Karn and Penrose
 
 
 ```{r}
-T2i <- read_csv("csv_files/T2i.csv")
+library(readr)
+T2i <- read_csv("DATA/T2i.csv")
 T2i
 
 ```
