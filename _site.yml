@@ -16,6 +16,6 @@ navbar:
         -
           href: Birth_Weight.html
           text: 'Karn Penrose Gestation Time'
-      text: "Los datos"
+      text: "Vintage Data"
   title: "Vintage Data"
 output_dir: "."

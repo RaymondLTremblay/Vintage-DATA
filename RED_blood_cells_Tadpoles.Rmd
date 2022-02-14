@@ -1,0 +1,96 @@
+---
+title: "Red Blood Cells Tadpoles"
+date: "9/15/2021"
+output:
+  html_document:
+    css: vintage.css
+    fig_caption: yes
+    highlight: pygments
+#  theme: simplex   To have the TOC in Red
+    toc: yes
+    toc_float: yes
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+***
+
+## Red Blood Cells in the Common Tadpoles.
+
+### A Biometric Study of the red blood corpuscules of the common tadpole (*Rana temporaria*), from the measurements of Ernest Warren, D. Sc. 
+
+ - Author: Karl Pearson, F.R.S.
+ - Pearson, K. (1909). A Biometric Study of the Red Blood Corpuscles of the Common Tadpole (Rana Temporaria), from the Measurements of Ernest Warren. Biometrika, 402-419.
+ 
+
+Introduction by Karl Pearson:
+
+  -On leaving for Natal in 1902 to take up bis duties at the Government
+Museum, Pietermaritzburg, Dr WaiTen placed in my bands a quantity of material,
+the reductions of which will be published with many other data in a forthcoming
+memoir on homotyposis. Among this material were measurements on the red blood corpuscles of 71 tadpoles from a pond at Hendon. These measurements were, for several reasons, of peculiar interest to me. I had been working at the blood corpuscles of frogs, and bad met with several difficulties in the investigation. One group of these difficulties turned on the problem of the "small sample," and the second set on the doubt which arose in my own mind as to whether the. size of the cell in the individual of any species can be considered as independent of the bulk or age of the individual.
+
+The paper can be downloaded from this [link](Data/Red_blood_cells/RED_BLOOD_CORPUSCLES_RANA_1909.pdf)
+
+***
+
+Here we look at the data from Appendix A  
+
+![TableA](Graficos/Table_A_Blood_Cells_Tadpoles.jpg)
+
+In this table we have the body lenght of the tadpoles and the lenght of the red Blood Cells. For data is available  [here](DATA/Red_blood_cells/Table_A_lenCorpuscles_Bodylen.xlsx). To facilitate categorizing the information in the .csv file the first value of the range is used. 
+
+***
+
+Here we present the data in the similar format as the table in the previous figure.
+
+
+```{r include=FALSE}
+library(tidyverse)
+library(janitor)
+library(reshape)# "untable"
+library(gt)
+```
+
+
+```{r}
+library(readxl)
+Table_A_lenCorpuscles_Bodylen <- read_excel("DATA/Red_blood_cells/Table_A_lenCorpuscles_Bodylen.xlsx")
+head(Table_A_lenCorpuscles_Bodylen, n=3)
+length(Table_A_lenCorpuscles_Bodylen$Num_individuals)
+sum(Table_A_lenCorpuscles_Bodylen$Num_individuals)
+
+BCT=as.data.frame(Table_A_lenCorpuscles_Bodylen) # VERY IMPORTANT STEP, convert to a data frame
+#BCT$length_corpuscles=as.character(BCT$length_corpuscles)
+#BCT$body_lenght=as.character(BCT$body_lenght)
+```
+
+ 
+
+```{r}
+
+head(BCT, n=5)
+
+#Table_A_lenCorpuscles_Bodylen %>% 
+# tabyl(body_lenght, length_corpuscles) 
+
+
+BCT2=untable(BCT[,c(1,2)], num =BCT[,3])
+#BCT2
+
+```
+
+
+
+```{r}
+BCT2a=BCT2 %>% 
+  tabyl(length_corpuscles, body_lenght)
+#BCT2a
+BCT3<-BCT2a %>% 
+  select(1,10:19, 2:9)
+gt(BCT3)
+```
+
