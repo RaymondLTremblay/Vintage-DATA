@@ -470,8 +470,10 @@ div.tocify {
 <li>Author: Karl Pearson, F.R.S.</li>
 <li>Pearson, K. (1909). A Biometric Study of the Red Blood Corpuscles of the Common Tadpole (Rana Temporaria), from the Measurements of Ernest Warren. Biometrika, 402-419.</li>
 </ul>
-<p>Introduction by Karl Pearson:</p>
-<p>-On leaving for Natal in 1902 to take up bis duties at the Government Museum, Pietermaritzburg, Dr WaiTen placed in my bands a quantity of material, the reductions of which will be published with many other data in a forthcoming memoir on homotyposis. Among this material were measurements on the red blood corpuscles of 71 tadpoles from a pond at Hendon. These measurements were, for several reasons, of peculiar interest to me. I had been working at the blood corpuscles of frogs, and bad met with several difficulties in the investigation. One group of these difficulties turned on the problem of the “small sample,” and the second set on the doubt which arose in my own mind as to whether the. size of the cell in the individual of any species can be considered as independent of the bulk or age of the individual.</p>
+<p>Introduction by Karl Pearson: Extract</p>
+<blockquote>
+<p>On leaving for Natal in 1902 to take up his duties at the Government Museum, Pietermaritzburg, Dr WaiTen placed in my bands a quantity of material, the reductions of which will be published with many other data in a forthcoming memoir on homotyposis. Among this material were measurements on the red blood corpuscles of 71 tadpoles from a pond at Hendon. These measurements were, for several reasons, of peculiar interest to me. I had been working at the blood corpuscles of frogs, and had met with several difficulties in the investigation. One group of these difficulties turned on the problem of the “small sample,” and the second set on the doubt which arose in my own mind as to whether the size of the cell in the individual of any species can be considered as independent of the bulk or age of the individual.</p>
+</blockquote>
 <p>The paper can be downloaded from this <a href="Data/Red_blood_cells/RED_BLOOD_CORPUSCLES_RANA_1909.pdf">link</a></p>
 <hr />
 <p>Here we look at the data from Appendix A</p>
@@ -479,50 +481,15 @@ div.tocify {
 <img src="Graficos/Table_A_Blood_Cells_Tadpoles.jpg" alt="" />
 <p class="caption">TableA</p>
 </div>
-<p>In this table we have the body lenght of the tadpoles and the lenght of the red Blood Cells. For data is available <a href="DATA/Red_blood_cells/Table_A_lenCorpuscles_Bodylen.xlsx">here</a>. To facilitate categorizing the information in the .csv file the first value of the range is used.</p>
+<p>In this table we have the body lenght of the tadpoles and the length of the red Blood Cells. The data is available <a href="DATA/Red_blood_cells/Table_A_lenCorpuscles_Bodylen.xlsx">here</a> in an Excel file. To facilitate categorizing the information in the file the first value of the range is used. of bidy length and length of blood corpuscles are shown and not the range of the category.</p>
 <hr />
 <p>Here we present the data in the similar format as the table in the previous figure.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Table_A_lenCorpuscles_Bodylen <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;DATA/Red_blood_cells/Table_A_lenCorpuscles_Bodylen.xlsx&quot;</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Table_A_lenCorpuscles_Bodylen, <span class="at">n=</span><span class="dv">3</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 3 × 3
-##   length_corpuscles body_lenght Num_individuals
-##               &lt;dbl&gt;       &lt;dbl&gt;           &lt;dbl&gt;
-## 1              4.95       10.4                1
-## 2              5.15        6.35               1
-## 3              5.15        7.35               1</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(Table_A_lenCorpuscles_Bodylen<span class="sc">$</span>Num_individuals)</span></code></pre></div>
-<pre><code>## [1] 319</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(Table_A_lenCorpuscles_Bodylen<span class="sc">$</span>Num_individuals)</span></code></pre></div>
-<pre><code>## [1] 1766</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>BCT<span class="ot">=</span><span class="fu">as.data.frame</span>(Table_A_lenCorpuscles_Bodylen) <span class="co"># VERY IMPORTANT STEP, convert to a data frame</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#BCT$length_corpuscles=as.character(BCT$length_corpuscles)</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#BCT$body_lenght=as.character(BCT$body_lenght)</span></span></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(BCT, <span class="at">n=</span><span class="dv">5</span>)</span></code></pre></div>
-<pre><code>##   length_corpuscles body_lenght Num_individuals
-## 1              4.95       10.35               1
-## 2              5.15        6.35               1
-## 3              5.15        7.35               1
-## 4              5.15       11.35               1
-## 5              5.35        7.35               1</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Table_A_lenCorpuscles_Bodylen %&gt;% </span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># tabyl(body_lenght, length_corpuscles) </span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>BCT2<span class="ot">=</span><span class="fu">untable</span>(BCT[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)], <span class="at">num =</span>BCT[,<span class="dv">3</span>])</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#BCT2</span></span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>BCT2a<span class="ot">=</span>BCT2 <span class="sc">%&gt;%</span> </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabyl</span>(length_corpuscles, body_lenght)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#BCT2a</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>BCT3<span class="ot">&lt;-</span>BCT2a <span class="sc">%&gt;%</span> </span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span>,<span class="dv">10</span><span class="sc">:</span><span class="dv">19</span>, <span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(BCT3)</span></code></pre></div>
-<div id="rqfosvwsku" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="vgffkgphlx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#rqfosvwsku .gt_table {
+#vgffkgphlx .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -547,7 +514,7 @@ div.tocify {
   border-left-color: #D3D3D3;
 }
 
-#rqfosvwsku .gt_heading {
+#vgffkgphlx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -559,7 +526,7 @@ div.tocify {
   border-right-color: #D3D3D3;
 }
 
-#rqfosvwsku .gt_title {
+#vgffkgphlx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -569,7 +536,7 @@ div.tocify {
   border-bottom-width: 0;
 }
 
-#rqfosvwsku .gt_subtitle {
+#vgffkgphlx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -579,13 +546,13 @@ div.tocify {
   border-top-width: 0;
 }
 
-#rqfosvwsku .gt_bottom_border {
+#vgffkgphlx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rqfosvwsku .gt_col_headings {
+#vgffkgphlx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -600,7 +567,7 @@ div.tocify {
   border-right-color: #D3D3D3;
 }
 
-#rqfosvwsku .gt_col_heading {
+#vgffkgphlx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -620,7 +587,7 @@ div.tocify {
   overflow-x: hidden;
 }
 
-#rqfosvwsku .gt_column_spanner_outer {
+#vgffkgphlx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -632,15 +599,15 @@ div.tocify {
   padding-right: 4px;
 }
 
-#rqfosvwsku .gt_column_spanner_outer:first-child {
+#vgffkgphlx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rqfosvwsku .gt_column_spanner_outer:last-child {
+#vgffkgphlx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rqfosvwsku .gt_column_spanner {
+#vgffkgphlx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -652,7 +619,7 @@ div.tocify {
   width: 100%;
 }
 
-#rqfosvwsku .gt_group_heading {
+#vgffkgphlx .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -674,7 +641,7 @@ div.tocify {
   vertical-align: middle;
 }
 
-#rqfosvwsku .gt_empty_group_heading {
+#vgffkgphlx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -689,15 +656,15 @@ div.tocify {
   vertical-align: middle;
 }
 
-#rqfosvwsku .gt_from_md > :first-child {
+#vgffkgphlx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rqfosvwsku .gt_from_md > :last-child {
+#vgffkgphlx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rqfosvwsku .gt_row {
+#vgffkgphlx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -716,7 +683,7 @@ div.tocify {
   overflow-x: hidden;
 }
 
-#rqfosvwsku .gt_stub {
+#vgffkgphlx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -728,7 +695,7 @@ div.tocify {
   padding-left: 12px;
 }
 
-#rqfosvwsku .gt_summary_row {
+#vgffkgphlx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -738,7 +705,7 @@ div.tocify {
   padding-right: 5px;
 }
 
-#rqfosvwsku .gt_first_summary_row {
+#vgffkgphlx .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -748,7 +715,7 @@ div.tocify {
   border-top-color: #D3D3D3;
 }
 
-#rqfosvwsku .gt_grand_summary_row {
+#vgffkgphlx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -758,7 +725,7 @@ div.tocify {
   padding-right: 5px;
 }
 
-#rqfosvwsku .gt_first_grand_summary_row {
+#vgffkgphlx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -768,11 +735,11 @@ div.tocify {
   border-top-color: #D3D3D3;
 }
 
-#rqfosvwsku .gt_striped {
+#vgffkgphlx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rqfosvwsku .gt_table_body {
+#vgffkgphlx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -781,7 +748,7 @@ div.tocify {
   border-bottom-color: #D3D3D3;
 }
 
-#rqfosvwsku .gt_footnotes {
+#vgffkgphlx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -795,13 +762,13 @@ div.tocify {
   border-right-color: #D3D3D3;
 }
 
-#rqfosvwsku .gt_footnote {
+#vgffkgphlx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#rqfosvwsku .gt_sourcenotes {
+#vgffkgphlx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -815,41 +782,41 @@ div.tocify {
   border-right-color: #D3D3D3;
 }
 
-#rqfosvwsku .gt_sourcenote {
+#vgffkgphlx .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#rqfosvwsku .gt_left {
+#vgffkgphlx .gt_left {
   text-align: left;
 }
 
-#rqfosvwsku .gt_center {
+#vgffkgphlx .gt_center {
   text-align: center;
 }
 
-#rqfosvwsku .gt_right {
+#vgffkgphlx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rqfosvwsku .gt_font_normal {
+#vgffkgphlx .gt_font_normal {
   font-weight: normal;
 }
 
-#rqfosvwsku .gt_font_bold {
+#vgffkgphlx .gt_font_bold {
   font-weight: bold;
 }
 
-#rqfosvwsku .gt_font_italic {
+#vgffkgphlx .gt_font_italic {
   font-style: italic;
 }
 
-#rqfosvwsku .gt_super {
+#vgffkgphlx .gt_super {
   font-size: 65%;
 }
 
-#rqfosvwsku .gt_footnote_marks {
+#vgffkgphlx .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -860,603 +827,1040 @@ div.tocify {
   <thead class="gt_col_headings">
     <tr>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">length_corpuscles</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">5.35</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">5.85</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">6.35</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">6.85</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">7.35</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">7.85</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">8.35</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">8.85</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">9.35</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">9.85</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">10.35</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">10.85</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">11.35</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">11.85</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">12.35</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">13.35</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">13.84</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">13.85</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">body_lenght</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Num_individuals</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr><td class="gt_row gt_right">4.95</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
+<td class="gt_row gt_right">10.35</td>
+<td class="gt_row gt_right">1</td></tr>
     <tr><td class="gt_row gt_right">5.15</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">5.35</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">5.55</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">5.75</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">5.95</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">10</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">6.15</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">7</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">2</td></tr>
-    <tr><td class="gt_row gt_right">6.35</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">16</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">6.55</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">9</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">6.75</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">7</td>
-<td class="gt_row gt_right">9</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">7</td>
-<td class="gt_row gt_right">10</td>
-<td class="gt_row gt_right">12</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">6.95</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">7</td>
-<td class="gt_row gt_right">8</td>
-<td class="gt_row gt_right">8</td>
-<td class="gt_row gt_right">9</td>
-<td class="gt_row gt_right">14</td>
-<td class="gt_row gt_right">9</td>
-<td class="gt_row gt_right">11</td>
-<td class="gt_row gt_right">9</td>
-<td class="gt_row gt_right">17</td>
-<td class="gt_row gt_right">13</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">3</td></tr>
-    <tr><td class="gt_row gt_right">7.15</td>
-<td class="gt_row gt_right">6</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">9</td>
-<td class="gt_row gt_right">11</td>
-<td class="gt_row gt_right">7</td>
-<td class="gt_row gt_right">18</td>
-<td class="gt_row gt_right">20</td>
-<td class="gt_row gt_right">15</td>
-<td class="gt_row gt_right">16</td>
-<td class="gt_row gt_right">12</td>
-<td class="gt_row gt_right">19</td>
-<td class="gt_row gt_right">11</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">16</td>
-<td class="gt_row gt_right">7</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">5</td></tr>
-    <tr><td class="gt_row gt_right">7.35</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">7</td>
-<td class="gt_row gt_right">17</td>
-<td class="gt_row gt_right">10</td>
-<td class="gt_row gt_right">11</td>
-<td class="gt_row gt_right">15</td>
-<td class="gt_row gt_right">10</td>
-<td class="gt_row gt_right">8</td>
-<td class="gt_row gt_right">9</td>
-<td class="gt_row gt_right">15</td>
-<td class="gt_row gt_right">9</td>
-<td class="gt_row gt_right">8</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">6.35</td>
 <td class="gt_row gt_right">1</td></tr>
-    <tr><td class="gt_row gt_right">7.55</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">9</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">6</td>
-<td class="gt_row gt_right">6</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">27</td>
-<td class="gt_row gt_right">15</td>
-<td class="gt_row gt_right">11</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">9</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">2</td></tr>
-    <tr><td class="gt_row gt_right">7.75</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">10</td>
-<td class="gt_row gt_right">13</td>
-<td class="gt_row gt_right">20</td>
-<td class="gt_row gt_right">10</td>
-<td class="gt_row gt_right">18</td>
-<td class="gt_row gt_right">22</td>
-<td class="gt_row gt_right">12</td>
-<td class="gt_row gt_right">21</td>
-<td class="gt_row gt_right">10</td>
-<td class="gt_row gt_right">11</td>
-<td class="gt_row gt_right">11</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">10</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">7.95</td>
-<td class="gt_row gt_right">13</td>
-<td class="gt_row gt_right">10</td>
-<td class="gt_row gt_right">8</td>
-<td class="gt_row gt_right">17</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">12</td>
-<td class="gt_row gt_right">24</td>
-<td class="gt_row gt_right">15</td>
-<td class="gt_row gt_right">8</td>
-<td class="gt_row gt_right">9</td>
-<td class="gt_row gt_right">18</td>
-<td class="gt_row gt_right">11</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">3</td></tr>
-    <tr><td class="gt_row gt_right">8.15</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">10</td>
-<td class="gt_row gt_right">21</td>
-<td class="gt_row gt_right">10</td>
-<td class="gt_row gt_right">11</td>
-<td class="gt_row gt_right">17</td>
-<td class="gt_row gt_right">18</td>
-<td class="gt_row gt_right">12</td>
-<td class="gt_row gt_right">10</td>
-<td class="gt_row gt_right">16</td>
-<td class="gt_row gt_right">10</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
+    <tr><td class="gt_row gt_right">5.15</td>
+<td class="gt_row gt_right">7.35</td>
 <td class="gt_row gt_right">1</td></tr>
-    <tr><td class="gt_row gt_right">8.35</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">6</td>
-<td class="gt_row gt_right">6</td>
-<td class="gt_row gt_right">10</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">6</td>
-<td class="gt_row gt_right">12</td>
-<td class="gt_row gt_right">7</td>
-<td class="gt_row gt_right">14</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">8.55</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">6</td>
-<td class="gt_row gt_right">6</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">6</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">12</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">8.75</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">7</td>
-<td class="gt_row gt_right">9</td>
-<td class="gt_row gt_right">20</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">12</td>
-<td class="gt_row gt_right">8</td>
-<td class="gt_row gt_right">11</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">8</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td></tr>
-    <tr><td class="gt_row gt_right">8.95</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">11</td>
-<td class="gt_row gt_right">12</td>
-<td class="gt_row gt_right">10</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">9</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td></tr>
-    <tr><td class="gt_row gt_right">9.15</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">7</td>
-<td class="gt_row gt_right">9</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">7</td>
-<td class="gt_row gt_right">6</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">9.35</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">6</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">11</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">9.55</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">9.75</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">7</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">9.95</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td></tr>
-    <tr><td class="gt_row gt_right">10.15</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">10.35</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">10.55</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
-    <tr><td class="gt_row gt_right">10.95</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">0</td></tr>
   </tbody>
   
   
 </table>
 </div>
+<p>The data was first “unstable”</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#head(BCT, n=5)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>BCT2<span class="ot">=</span><span class="fu">untable</span>(BCT[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)], <span class="at">num =</span>BCT[,<span class="dv">3</span>])</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#BCT2</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>BCT2a<span class="ot">=</span>BCT2 <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabyl</span>(length_corpuscles, body_lenght)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#BCT2a</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>BCT3<span class="ot">&lt;-</span>BCT2a <span class="sc">%&gt;%</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span>,<span class="dv">10</span><span class="sc">:</span><span class="dv">19</span>, <span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>BCT3<span class="sc">$</span>length_corpuscles <span class="ot">=</span> <span class="fu">as.factor</span>(BCT3<span class="sc">$</span>length_corpuscles)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(BCT3) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="fu">md</span>(<span class="st">&quot;Body length of tadpoles&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tab_style</span>(</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> <span class="fu">everything</span>()),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">style     =</span> <span class="fu">list</span>(</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>       <span class="co">#Give a thick border below</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cell_borders</span>(<span class="at">sides =</span> <span class="st">&quot;bottom&quot;</span>, <span class="at">weight =</span> <span class="fu">px</span>(<span class="dv">3</span>)),</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>       <span class="co">#Make text bold</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">&quot;bold&quot;</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>     )</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>   ) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a> <span class="fu">tab_style</span>(</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_borders</span>(<span class="at">sides =</span> <span class="st">&quot;right&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, </span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>                         <span class="at">style =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">weight =</span> <span class="fu">px</span>(<span class="dv">3</span>)),</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(length_corpuscles)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="st">&quot;Pearson, K. (1909). A Biometric Study of the Red Blood Corpuscles of the Common Tadpole (Rana Temporaria), from the Measurements of Ernest Warren. Biometrika, 402-419.&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data_color</span>(</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">&quot;5.35&quot;</span>, <span class="st">&quot;5.85&quot;</span>, <span class="st">&quot;6.35&quot;</span>, <span class="st">&quot;6.85&quot;</span>, <span class="st">&quot;7.35&quot;</span>, <span class="st">&quot;7.85&quot;</span>, <span class="st">&quot;8.35&quot;</span>,</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&quot;8.85&quot;</span>,  <span class="st">&quot;9.35&quot;</span>, <span class="st">&quot;9.85&quot;</span>, <span class="st">&quot;10.35&quot;</span>,    <span class="st">&quot;10.85&quot;</span>,    <span class="st">&quot;11.35&quot;</span>,    <span class="st">&quot;11.85&quot;</span>,    <span class="st">&quot;12.35&quot;</span>,    <span class="st">&quot;13.35&quot;</span>,    <span class="st">&quot;13.84&quot;</span>,    <span class="st">&quot;13.85&quot;</span>),</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">colors =</span> scales<span class="sc">::</span><span class="fu">col_numeric</span>(</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">palette =</span> <span class="fu">c</span>(<span class="st">&quot;white&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;brown&quot;</span>),</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>      <span class="at">domain =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">30</span>))</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div id="fugbhjbxwc" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#fugbhjbxwc .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#fugbhjbxwc .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fugbhjbxwc .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#fugbhjbxwc .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#fugbhjbxwc .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fugbhjbxwc .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fugbhjbxwc .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#fugbhjbxwc .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#fugbhjbxwc .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#fugbhjbxwc .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#fugbhjbxwc .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#fugbhjbxwc .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#fugbhjbxwc .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#fugbhjbxwc .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#fugbhjbxwc .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#fugbhjbxwc .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#fugbhjbxwc .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#fugbhjbxwc .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fugbhjbxwc .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#fugbhjbxwc .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fugbhjbxwc .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#fugbhjbxwc .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#fugbhjbxwc .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fugbhjbxwc .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fugbhjbxwc .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#fugbhjbxwc .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fugbhjbxwc .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#fugbhjbxwc .gt_left {
+  text-align: left;
+}
+
+#fugbhjbxwc .gt_center {
+  text-align: center;
+}
+
+#fugbhjbxwc .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#fugbhjbxwc .gt_font_normal {
+  font-weight: normal;
+}
+
+#fugbhjbxwc .gt_font_bold {
+  font-weight: bold;
+}
+
+#fugbhjbxwc .gt_font_italic {
+  font-style: italic;
+}
+
+#fugbhjbxwc .gt_super {
+  font-size: 65%;
+}
+
+#fugbhjbxwc .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 65%;
+}
+</style>
+<table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="19" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Body length of tadpoles</th>
+    </tr>
+    
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">length_corpuscles</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">5.35</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">5.85</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">6.35</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">6.85</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">7.35</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">7.85</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">8.35</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">8.85</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">9.35</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">9.85</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">10.35</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">10.85</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">11.35</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">11.85</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">12.35</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">13.35</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">13.84</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-weight: bold;">13.85</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">4.95</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">5.15</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">5.35</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">5.55</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">5.75</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">5.95</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFC26C; color: #000000;">10</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">6.15</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFD498; color: #000000;">7</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">6.35</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #F99D0A; color: #000000;">16</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">6.55</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFC87B; color: #000000;">9</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">6.75</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFD498; color: #000000;">7</td>
+<td class="gt_row gt_right" style="background-color: #FFC87B; color: #000000;">9</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFD498; color: #000000;">7</td>
+<td class="gt_row gt_right" style="background-color: #FFC26C; color: #000000;">10</td>
+<td class="gt_row gt_right" style="background-color: #FFB64C; color: #000000;">12</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">6.95</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFD498; color: #000000;">7</td>
+<td class="gt_row gt_right" style="background-color: #FFCE89; color: #000000;">8</td>
+<td class="gt_row gt_right" style="background-color: #FFCE89; color: #000000;">8</td>
+<td class="gt_row gt_right" style="background-color: #FFC87B; color: #000000;">9</td>
+<td class="gt_row gt_right" style="background-color: #FFAB26; color: #000000;">14</td>
+<td class="gt_row gt_right" style="background-color: #FFC87B; color: #000000;">9</td>
+<td class="gt_row gt_right" style="background-color: #FFBC5C; color: #000000;">11</td>
+<td class="gt_row gt_right" style="background-color: #FFC87B; color: #000000;">9</td>
+<td class="gt_row gt_right" style="background-color: #F39512; color: #000000;">17</td>
+<td class="gt_row gt_right" style="background-color: #FFB13B; color: #000000;">13</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">7.15</td>
+<td class="gt_row gt_right" style="background-color: #FFDAA7; color: #000000;">6</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFC87B; color: #000000;">9</td>
+<td class="gt_row gt_right" style="background-color: #FFBC5C; color: #000000;">11</td>
+<td class="gt_row gt_right" style="background-color: #FFD498; color: #000000;">7</td>
+<td class="gt_row gt_right" style="background-color: #ED8D17; color: #000000;">18</td>
+<td class="gt_row gt_right" style="background-color: #E17E1E; color: #000000;">20</td>
+<td class="gt_row gt_right" style="background-color: #FFA500; color: #000000;">15</td>
+<td class="gt_row gt_right" style="background-color: #F99D0A; color: #000000;">16</td>
+<td class="gt_row gt_right" style="background-color: #FFB64C; color: #000000;">12</td>
+<td class="gt_row gt_right" style="background-color: #E7851B; color: #000000;">19</td>
+<td class="gt_row gt_right" style="background-color: #FFBC5C; color: #000000;">11</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #F99D0A; color: #000000;">16</td>
+<td class="gt_row gt_right" style="background-color: #FFD498; color: #000000;">7</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">7.35</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFD498; color: #000000;">7</td>
+<td class="gt_row gt_right" style="background-color: #F39512; color: #000000;">17</td>
+<td class="gt_row gt_right" style="background-color: #FFC26C; color: #000000;">10</td>
+<td class="gt_row gt_right" style="background-color: #FFBC5C; color: #000000;">11</td>
+<td class="gt_row gt_right" style="background-color: #FFA500; color: #000000;">15</td>
+<td class="gt_row gt_right" style="background-color: #FFC26C; color: #000000;">10</td>
+<td class="gt_row gt_right" style="background-color: #FFCE89; color: #000000;">8</td>
+<td class="gt_row gt_right" style="background-color: #FFC87B; color: #000000;">9</td>
+<td class="gt_row gt_right" style="background-color: #FFA500; color: #000000;">15</td>
+<td class="gt_row gt_right" style="background-color: #FFC87B; color: #000000;">9</td>
+<td class="gt_row gt_right" style="background-color: #FFCE89; color: #000000;">8</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">7.55</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFC87B; color: #000000;">9</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFDAA7; color: #000000;">6</td>
+<td class="gt_row gt_right" style="background-color: #FFDAA7; color: #000000;">6</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #B74529; color: #FFFFFF;">27</td>
+<td class="gt_row gt_right" style="background-color: #FFA500; color: #000000;">15</td>
+<td class="gt_row gt_right" style="background-color: #FFBC5C; color: #000000;">11</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFC87B; color: #000000;">9</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">7.75</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFC26C; color: #000000;">10</td>
+<td class="gt_row gt_right" style="background-color: #FFB13B; color: #000000;">13</td>
+<td class="gt_row gt_right" style="background-color: #E17E1E; color: #000000;">20</td>
+<td class="gt_row gt_right" style="background-color: #FFC26C; color: #000000;">10</td>
+<td class="gt_row gt_right" style="background-color: #ED8D17; color: #000000;">18</td>
+<td class="gt_row gt_right" style="background-color: #D56E23; color: #000000;">22</td>
+<td class="gt_row gt_right" style="background-color: #FFB64C; color: #000000;">12</td>
+<td class="gt_row gt_right" style="background-color: #DB7621; color: #000000;">21</td>
+<td class="gt_row gt_right" style="background-color: #FFC26C; color: #000000;">10</td>
+<td class="gt_row gt_right" style="background-color: #FFBC5C; color: #000000;">11</td>
+<td class="gt_row gt_right" style="background-color: #FFBC5C; color: #000000;">11</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFC26C; color: #000000;">10</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">7.95</td>
+<td class="gt_row gt_right" style="background-color: #FFB13B; color: #000000;">13</td>
+<td class="gt_row gt_right" style="background-color: #FFC26C; color: #000000;">10</td>
+<td class="gt_row gt_right" style="background-color: #FFCE89; color: #000000;">8</td>
+<td class="gt_row gt_right" style="background-color: #F39512; color: #000000;">17</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFB64C; color: #000000;">12</td>
+<td class="gt_row gt_right" style="background-color: #C95E26; color: #FFFFFF;">24</td>
+<td class="gt_row gt_right" style="background-color: #FFA500; color: #000000;">15</td>
+<td class="gt_row gt_right" style="background-color: #FFCE89; color: #000000;">8</td>
+<td class="gt_row gt_right" style="background-color: #FFC87B; color: #000000;">9</td>
+<td class="gt_row gt_right" style="background-color: #ED8D17; color: #000000;">18</td>
+<td class="gt_row gt_right" style="background-color: #FFBC5C; color: #000000;">11</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">8.15</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFC26C; color: #000000;">10</td>
+<td class="gt_row gt_right" style="background-color: #DB7621; color: #000000;">21</td>
+<td class="gt_row gt_right" style="background-color: #FFC26C; color: #000000;">10</td>
+<td class="gt_row gt_right" style="background-color: #FFBC5C; color: #000000;">11</td>
+<td class="gt_row gt_right" style="background-color: #F39512; color: #000000;">17</td>
+<td class="gt_row gt_right" style="background-color: #ED8D17; color: #000000;">18</td>
+<td class="gt_row gt_right" style="background-color: #FFB64C; color: #000000;">12</td>
+<td class="gt_row gt_right" style="background-color: #FFC26C; color: #000000;">10</td>
+<td class="gt_row gt_right" style="background-color: #F99D0A; color: #000000;">16</td>
+<td class="gt_row gt_right" style="background-color: #FFC26C; color: #000000;">10</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">8.35</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFDAA7; color: #000000;">6</td>
+<td class="gt_row gt_right" style="background-color: #FFDAA7; color: #000000;">6</td>
+<td class="gt_row gt_right" style="background-color: #FFC26C; color: #000000;">10</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFDAA7; color: #000000;">6</td>
+<td class="gt_row gt_right" style="background-color: #FFB64C; color: #000000;">12</td>
+<td class="gt_row gt_right" style="background-color: #FFD498; color: #000000;">7</td>
+<td class="gt_row gt_right" style="background-color: #FFAB26; color: #000000;">14</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">8.55</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFDAA7; color: #000000;">6</td>
+<td class="gt_row gt_right" style="background-color: #FFDAA7; color: #000000;">6</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFDAA7; color: #000000;">6</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFB64C; color: #000000;">12</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">8.75</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFD498; color: #000000;">7</td>
+<td class="gt_row gt_right" style="background-color: #FFC87B; color: #000000;">9</td>
+<td class="gt_row gt_right" style="background-color: #E17E1E; color: #000000;">20</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFB64C; color: #000000;">12</td>
+<td class="gt_row gt_right" style="background-color: #FFCE89; color: #000000;">8</td>
+<td class="gt_row gt_right" style="background-color: #FFBC5C; color: #000000;">11</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFCE89; color: #000000;">8</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">8.95</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFBC5C; color: #000000;">11</td>
+<td class="gt_row gt_right" style="background-color: #FFB64C; color: #000000;">12</td>
+<td class="gt_row gt_right" style="background-color: #FFC26C; color: #000000;">10</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFC87B; color: #000000;">9</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">9.15</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFD498; color: #000000;">7</td>
+<td class="gt_row gt_right" style="background-color: #FFC87B; color: #000000;">9</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFD498; color: #000000;">7</td>
+<td class="gt_row gt_right" style="background-color: #FFDAA7; color: #000000;">6</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFE6C4; color: #000000;">4</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">9.35</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFDAA7; color: #000000;">6</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFBC5C; color: #000000;">11</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">9.55</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">9.75</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFD498; color: #000000;">7</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">9.95</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF3E1; color: #000000;">2</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">10.15</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFE0B5; color: #000000;">5</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">10.35</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFECD2; color: #000000;">3</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">10.55</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+    <tr><td class="gt_row gt_center" style="border-right-width: 3px; border-right-style: dashed; border-right-color: black;">10.95</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFF9F0; color: #000000;">1</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td>
+<td class="gt_row gt_right" style="background-color: #FFFFFF; color: #000000;">0</td></tr>
+  </tbody>
+  <tfoot class="gt_sourcenotes">
+    <tr>
+      <td class="gt_sourcenote" colspan="19">Pearson, K. (1909). A Biometric Study of the Red Blood Corpuscles of the Common Tadpole (Rana Temporaria), from the Measurements of Ernest Warren. Biometrika, 402-419.</td>
+    </tr>
+  </tfoot>
+  
+</table>
 </div>
+</div>
+</div>
+<div id="basic-descriptive-stats-of-tadpoles-cells-of-tadpoles" class="section level2">
+<h2>Basic descriptive stats of tadpoles cells of tadpoles</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#BCT2</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>BCT2 <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">meanBL=</span><span class="fu">mean</span>(body_lenght),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">SD=</span><span class="fu">sd</span>(body_lenght))</span></code></pre></div>
+<pre><code>##     meanBL       SD
+## 1 8.781195 1.916942</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>BCT2 <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_BC=</span><span class="fu">mean</span>(length_corpuscles),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">SD_BL=</span><span class="fu">sd</span>(length_corpuscles))</span></code></pre></div>
+<pre><code>##    mean_BC     SD_BL
+## 1 7.766535 0.9219505</code></pre>
+</div>
+<div id="regression-analisis-of-tadpole-lenght-and-corpuscule-length-mm" class="section level2">
+<h2>Regression analisis of tadpole lenght and corpuscule length (mm)</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(BCT2, <span class="fu">aes</span>(body_lenght, length_corpuscles))<span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_count</span>(<span class="fu">aes</span>(<span class="at">color=</span>..n..))<span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm)<span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">&#39;legend&#39;</span>)<span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">size=</span><span class="st">&quot;none&quot;</span>)<span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_gradient</span>(<span class="at">low =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">high =</span> <span class="st">&quot;orange&quot;</span>, <span class="at">na.value =</span> <span class="cn">NA</span>)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="RED_blood_cells_Tadpoles_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 
 
