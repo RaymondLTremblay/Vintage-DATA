@@ -149,3 +149,11 @@ ggplot(BCT2, aes(body_lenght, length_corpuscles))+
   scale_colour_gradient(low = "grey", high = "orange", na.value = NA)
 ```
 
+
+```{r}
+model=lm(length_corpuscles~body_lenght, data=BCT2)
+summary(model)
+
+cor(BCT2$length_corpuscles, BCT2$body_lenght)
+```
+
