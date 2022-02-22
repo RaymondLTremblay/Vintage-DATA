@@ -1,5 +1,5 @@
 --- 
-name: BIOL4026
+name: Vintage Data Science
 navbar: 
   left: 
     - 
@@ -14,8 +14,11 @@ navbar:
           href: Parity.html
           text: 'Karn Penrose Parity'
         -
-          href: Birth_Weight.html
-          text: 'Karn Penrose Gestation Time'
+          href: RED_blood_cells_Tadpoles.html
+          text: 'Tadpoles and blood cell size, 1909'
       text: "Vintage Data"
   title: "Vintage Data"
 output_dir: "."
+
+
+
