@@ -40,6 +40,7 @@ Here we look at the data from Appendix A
 
 ![TableA](Graficos/Table_A_Blood_Cells_Tadpoles.jpg)
 
+
 In this table we have the body lenght of the tadpoles and the length of the red Blood Cells. The data is available  [here](DATA/Red_blood_cells/Table_A_lenCorpuscles_Bodylen.xlsx) in an Excel file. To facilitate categorizing the information in the file the first value of the range is used of body length and length of blood corpuscles are shown and not the range of the category as in the table. 
 
 ***
@@ -98,16 +99,20 @@ BCT2=untable(BCT[,c(1,2)], num =BCT[,3])
 
 ## Visualizing data in a modern form
 
-Visualizaing the data in a table similar to that published
+Visualizing the data in a table similar to that published
 
-```{r}
+```{r, out.width="50%"}
 BCT2a=BCT2 %>% 
   tabyl(length_corpuscles, body_lenght)
 #BCT2a
 BCT3<-BCT2a %>% 
   select(1,10:19, 2:9)
 BCT3$length_corpuscles = as.factor(BCT3$length_corpuscles)
+```
 
+
+
+```{r out.width="50%"}
 gt(BCT3) %>% 
   tab_header(title = md("Body length of tadpoles")) %>% 
    tab_style(
@@ -210,6 +215,7 @@ model=lm(length_corpuscles~body_lenght, data=BCT2)
 summary(model)
 ```
 
+***
 
 ## Correlation analysis
 
