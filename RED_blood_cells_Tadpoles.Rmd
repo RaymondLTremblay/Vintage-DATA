@@ -25,6 +25,7 @@ knitr::opts_chunk$set(echo = TRUE)
  - Author: Karl Pearson, F.R.S.
  - Pearson, K. (1909). A Biometric Study of the Red Blood Corpuscles of the Common Tadpole (Rana Temporaria), from the Measurements of Ernest Warren. Biometrika, 402-419.
  
+***
 
 Introduction by Karl Pearson: Extract
 
@@ -66,6 +67,7 @@ BCT=as.data.frame(Table_A_lenCorpuscles_Bodylen) # VERY IMPORTANT STEP, convert 
 #BCT$body_lenght=as.character(BCT$body_lenght)
 ```
 
+***
 
 ## The data was first "untable" 
 
@@ -82,6 +84,8 @@ head(BCT, n=5)
 BCT[10:14,]
 ```
 
+***
+
 ## Untable the data frame
 
 ```{r}
@@ -90,7 +94,11 @@ BCT2=untable(BCT[,c(1,2)], num =BCT[,3])
 
 ```
 
+***
 
+## Visualizing data in a modern form
+
+Visualizaing the data in a table similar to that published
 
 ```{r}
 BCT2a=BCT2 %>% 
@@ -128,7 +136,7 @@ gt(BCT3) %>%
   )
 ```
 
-
+***
 
 
 ## Basic descriptive stats of tadpoles cells of tadpoles
@@ -146,7 +154,7 @@ BCT2 %>%
             SD_BL=sd(length_corpuscles))
 ```
 
-
+***
 
 ## Regression analisis of tadpole lenght and corpuscule length (mm)
 
@@ -160,14 +168,19 @@ ggplot(BCT2, aes(body_lenght, length_corpuscles))+
   scale_colour_gradient(low = "grey", high = "orange", na.value = NA)
 ```
 
+***
 
 ## Original Figure of regression **Diagram 1** in paper.
 
-Note here that Pearson did not show the whole distribution on the values, which gives an impression of the slope being more negative (although it is the same).  In addition he calculated the mean of corpuscule length for different values of body length.   In addition the 95% CI of the regression line is not present.  
+Note here that Pearson did not show the whole distribution on the values, which gives an impression of the slope is more negative (although it is the same).  In addition he calculated the mean of corpuscule length for different values of body length.   In addition the 95% CI of the regression line is not present.  
 
 ![Regression ](Graficos/Tadpole_Regression_Diagram_1.png)
 
-We can get a similar type of figure 
+***
+
+# Replicating the figure
+
+We can get a similar type of figure, by limiting the area that is visualized 
 
 
 ```{r}
@@ -186,7 +199,9 @@ ggplot(BCT2, aes(body_lenght, length_corpuscles))+
 ```
 
 
+***
 
+## Regression analisis
 
 Evaluation if the regression model
 
@@ -194,6 +209,9 @@ Evaluation if the regression model
 model=lm(length_corpuscles~body_lenght, data=BCT2)
 summary(model)
 ```
+
+
+## Correlation analysis
 
 On page 405 of the paper Pearson calculates the Pearson Correlation coefficient as r= -0.23
 
