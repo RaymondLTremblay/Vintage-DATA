@@ -39,7 +39,7 @@ Here we look at the data from Appendix A
 
 ![TableA](Graficos/Table_A_Blood_Cells_Tadpoles.jpg)
 
-In this table we have the body lenght of the tadpoles and the length of the red Blood Cells. The data is available  [here](DATA/Red_blood_cells/Table_A_lenCorpuscles_Bodylen.xlsx) in an Excel file. To facilitate categorizing the information in the file the first value of the range is used. of bidy length and length of blood corpuscles are shown and not the range of the category. 
+In this table we have the body lenght of the tadpoles and the length of the red Blood Cells. The data is available  [here](DATA/Red_blood_cells/Table_A_lenCorpuscles_Bodylen.xlsx) in an Excel file. To facilitate categorizing the information in the file the first value of the range is used of body length and length of blood corpuscles are shown and not the range of the category as in the table. 
 
 ***
 
@@ -49,7 +49,7 @@ Here we present the data in the similar format as the table in the previous figu
 ```{r include=FALSE}
 library(tidyverse)
 library(janitor)
-library(reshape)# "untable"
+library(reshape) # for the "untable" function
 library(gt)
 ```
 
@@ -65,16 +65,26 @@ BCT=as.data.frame(Table_A_lenCorpuscles_Bodylen) # VERY IMPORTANT STEP, convert 
 #BCT$length_corpuscles=as.character(BCT$length_corpuscles)
 #BCT$body_lenght=as.character(BCT$body_lenght)
 ```
-The data was first "unstable" 
- 
+
+
+## The data was first "untable" 
+
+The function **untable** basically repeats the the selected line the number of times it appears in a specific column.  
+
+As an example line 11 would be repeated 3 times (Num_individuals) in the new data frame
+
+
 
 ```{r}
 
-#head(BCT, n=5)
+head(BCT, n=5)
 
+BCT[10:14,]
+```
 
+## Untable the data frame
 
-
+```{r}
 BCT2=untable(BCT[,c(1,2)], num =BCT[,3])
 #BCT2
 
@@ -125,11 +135,12 @@ gt(BCT3) %>%
 
 ```{r}
 #BCT2
+## Mean and standar deviation of body length
 BCT2 %>% 
   summarize(meanBL=mean(body_lenght),
             SD=sd(body_lenght))
 
-
+## Mean and standar deviation of length of corpuscules
 BCT2 %>% 
     summarize(mean_BC=mean(length_corpuscles),
             SD_BL=sd(length_corpuscles))
@@ -150,10 +161,45 @@ ggplot(BCT2, aes(body_lenght, length_corpuscles))+
 ```
 
 
+## Original Figure of regression **Diagram 1** in paper.
+
+Note here that Pearson did not show the whole distribution on the values, which gives an impression of the slope being more negative (although it is the same).  In addition he calculated the mean of corpuscule length for different values of body length.   In addition the 95% CI of the regression line is not present.  
+
+![Regression ](Graficos/Tadpole_Regression_Diagram_1.png)
+
+We can get a similar type of figure 
+
+
+```{r}
+ggplot(BCT2, aes(body_lenght, length_corpuscles))+
+  geom_count(aes(color=..n..))+
+  geom_smooth(method=lm)+
+    guides(color = 'legend')+
+  guides(size="none")+
+  scale_colour_gradient(low = "grey", high = "orange", na.value = NA)+
+  coord_cartesian(ylim= c(7.0, 8.4), xlim=c(5.85, 14.85))+
+  scale_x_continuous(breaks=seq(4.85, 14.85, len=11))+
+  xlab("Body length of tadpole")+
+  ylab("Length of blood corpuscules")
+  
+  
+```
+
+
+
+
+Evaluation if the regression model
+
 ```{r}
 model=lm(length_corpuscles~body_lenght, data=BCT2)
 summary(model)
+```
 
+On page 405 of the paper Pearson calculates the Pearson Correlation coefficient as r= -0.23
+
+The same result is found here.  
+
+```{r}
 cor(BCT2$length_corpuscles, BCT2$body_lenght)
 ```
 
