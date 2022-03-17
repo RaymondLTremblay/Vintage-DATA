@@ -1,0 +1,198 @@
+---
+title: "Organized"
+author: "Axel Leon"
+date: "9/15/2021"
+output:
+  html_document:
+    css: vintage.css
+    fig_caption: yes
+    highlight: pygments
+#  theme: simplex   To have the TOC in Red
+    toc: yes
+    toc_float: yes
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE}
+Sys.Date()
+```
+
+***
+
+## Objective 
+
+This Rmd is to learn how to format the data prior to analyses.  The data are collected form the Karn and Penrose, in the same structure they present in the paper, for analysis they needed to be wrangled for effective analysis in R and RStudio.
+
+
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(gt)
+library(reshape)
+library(janitor)
+library(caret)
+```
+***
+
+A small replicable data set
+
+```{r}
+mini=tribble( ~mother_age,~non_survivors,~total_birth,~birth_weight,
+14,0,1,3.5,
+16,1,1,4,
+17,0,1,4.5,
+18,0,2,5,
+19,0,4,6,
+20,0,5,6.5,
+22,3,5,7,
+25,4,10,7.5)
+mini
+sum(mini$total_birth- mini$non_survivors)
+library(readr)
+T2i <- read_csv("T2i.csv")
+library(readr)
+Mother_age_BW_Females_T2ii <- read_csv("Mother_age_BW_Females_T2ii.csv")
+```
+***
+
+Create a data frame for all death **0** and surviving babies **1**.
+
+- Calculate the number of survivors
+- Assign to a new column the code of **0** for all dead babies
+- Assign to a new column the code of **0** for a=ll babies alive
+- Untable (expand) the data set the number of times each conditions are present
+  - mother's age
+  - birth weight
+- bind both data frames in one
+- arrange (sort) by age of mother or weight (your preference)
+
+```{r}
+df=as.data.frame(T2i)%>%
+  mutate(survivors = total_birth - non_survivors)
+df
+sum(df$total_birth)
+## untable non-survivors
+df1<- untable(df[,c(1,2,4,5)], num = df[,"non_survivors"])%>%
+  filter(non_survivors >0)%>%
+  mutate(Alive_Dead = ifelse(non_survivors >0,0, NA))
+df1
+## untable survivors
+df2<- untable(df[,c(1,2,5,4)], num = df[,"survivors"])%>%
+  filter(survivors >0)%>%
+  mutate(Alive_Dead = ifelse(survivors >0, 1, NA))
+df2
+
+df5=bind_rows(df1, df2)%>%
+    mutate(sex = "male")# Function in dplyr
+df5 %>% arrange(mother_age)
+row.names(df5)<-NULL  # this removes the row names
+df5 %>% arrange(mother_age)
+```
+
+```{r}
+af=as.data.frame(T2i)%>%
+  mutate(survivors = total_birth - non_survivors)
+af
+sum(af$total_birth)
+## untable non-survivors
+af1<- untable(af[,c(1,2,4,5)], num = af[,"non_survivors"])%>%
+  filter(non_survivors >0)%>%
+  mutate(Alive_Dead = ifelse(non_survivors >0,0, NA))
+af1
+## untable survivors
+af2<- untable(af[,c(1,2,5,4)], num = af[,"survivors"])%>%
+  filter(survivors >0)%>%
+  mutate(Alive_Dead = ifelse(survivors >0, 1, NA))
+af2
+
+af5=bind_rows(af1, af2)%>%
+  mutate(sex = "female")# Function in dplyr
+af5 %>% arrange(mother_age)
+row.names(af5)<-NULL  # this removes the row names
+af5 %>% arrange(mother_age)
+
+qf=bind_rows(af5, df5)
+qf %>% arrange(birth_weight)
+row.names(qf)<-NULL
+qf
+```
+The above functions are now to be applied to the data sets of Karn and Penrose
+
+
+***
+
+
+```{r eval=FALSE, include=FALSE}
+
+
+model <- glm( Alive_Dead ~ birth_weight + mother_age, 
+                data = df5, family = binomial)
+summary(model)
+coefficients(model)
+par(mfrow=c(2,2))
+plot(model)
+
+```
+
+```{r}
+library(tidyverse)
+library(gridExtra)
+library(cowplot)
+binomial_smooth <-function(...){
+  geom_smooth(method = "glm", method.args = list(family = "binomial"), ...)
+}
+
+a<-ggplot(qf, aes(birth_weight, Alive_Dead))+
+   geom_jitter( aes(colour= sex), size = .2, height = .1)+
+  binomial_smooth()
+a
+b<-ggplot(qf, aes(mother_age, Alive_Dead))+
+  geom_jitter(size=.2, aes(colour=sex), height = .1)+
+  binomial_smooth()
+b
+p<-plot_grid(a,b)
+p
+ggsave("a+b.png", p, width = 10, height = 7)
+```
+-Gestation period 
+_parity 
+-Limpiar los graficos 
+
+esquema 
+-info del paper y donde lo consigo 
+-abstract y enlace 
+-insertar una de las tablas 
+-seguir el esquema del profesor referente a los tadpoles 
+
+
+
+```{r}
+model1 <- glm(alive_dead ~ mother_age, family = binomial)
+x2 <- seq(min(mother_age), max(mother_age), 1.0)
+y2 <- predict(model1, list(mother_age = x2), type = "response")
+
+plot(mother_age + birth_weight, jitter(alive_dead, 1), pch= 1)+
+lines(x2, y2, col = "red")
+
+
+names(df5)
+```
+
+
+```{r}
+ggplot(data = df5)+
+  geom_smooth(aes(mother_age, alive_dead),method = "glm", method.arg=list(family = "binomial"), se= TRUE)
+```
+
+
+
+
+
+mean(qf$birth_weight)
+mean(qf$Alive_Dead)
+
