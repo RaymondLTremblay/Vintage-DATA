@@ -14,7 +14,7 @@
 
 <title>Organized</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -44,6 +44,7 @@
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
     </style>
+
 
 
 <style type="text/css">
@@ -178,6 +179,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -406,7 +410,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -419,7 +423,7 @@ div.tocify {
   <a href="Descripcion.html">Home</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vintage Data
      
     <span class="caret"></span>
@@ -447,7 +451,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -463,7 +467,7 @@ div.tocify {
 </div>
 
 
-<pre><code>## [1] &quot;2022-02-22&quot;</code></pre>
+<pre><code>## [1] &quot;2022-04-11&quot;</code></pre>
 <hr />
 <div id="objective" class="section level2">
 <h2>Objective</h2>
@@ -646,14 +650,14 @@ div.tocify {
 <hr />
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>T2i <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;DATA/T2i.csv&quot;</span>)</span></code></pre></div>
-<pre><code>## Rows: 261 Columns: 4</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+<pre><code>## Rows: 261 Columns: 4
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
-## dbl (4): Mother_age, Count_Non_survivors, Count_Total_Birth, Birth_weight</code></pre>
-<pre><code>## 
+## dbl (4): Mother_age, Count_Non_survivors, Count_Total_Birth, Birth_weight
+## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>T2i</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>T2i</span></code></pre></div>
 <pre><code>## # A tibble: 261 × 4
 ##    Mother_age Count_Non_survivors Count_Total_Birth Birth_weight
 ##         &lt;dbl&gt;               &lt;dbl&gt;             &lt;dbl&gt;        &lt;dbl&gt;
@@ -668,9 +672,9 @@ div.tocify {
 ##  9         16                   0                 2          5.5
 ## 10         16                   0                 1          5  
 ## # … with 251 more rows</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">as.data.frame</span>(T2i)<span class="sc">%&gt;%</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">survivors =</span> Count_Total_Birth <span class="sc">-</span> Count_Non_survivors)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df, <span class="at">n=</span><span class="dv">8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">as.data.frame</span>(T2i)<span class="sc">%&gt;%</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">survivors =</span> Count_Total_Birth <span class="sc">-</span> Count_Non_survivors)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df, <span class="at">n=</span><span class="dv">8</span>)</span></code></pre></div>
 <pre><code>##   Mother_age Count_Non_survivors Count_Total_Birth Birth_weight survivors
 ## 1         16                   0                 1          9.5         1
 ## 2         16                   0                 2          9.0         2
@@ -680,16 +684,16 @@ div.tocify {
 ## 6         16                   0                 2          7.0         2
 ## 7         16                   0                 4          6.5         4
 ## 8         16                   0                 2          6.0         2</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df1<span class="ot">&lt;-</span> <span class="fu">untable</span>(df[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>)], <span class="at">num =</span> df[,<span class="dv">3</span>])<span class="sc">%&gt;%</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Count_Non_survivors <span class="sc">&gt;</span> <span class="dv">0</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dead =</span> <span class="fu">ifelse</span>(Count_Non_survivors<span class="sc">&gt;=</span><span class="dv">0</span>,<span class="dv">0</span>))</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>df2<span class="ot">&lt;-</span> <span class="fu">untable</span>(df[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">4</span>)], <span class="at">num =</span> df[,<span class="dv">2</span>])<span class="sc">%&gt;%</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(survivors <span class="sc">&gt;</span><span class="dv">0</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Survivors =</span> <span class="fu">ifelse</span>(survivors <span class="sc">&gt;</span><span class="dv">0</span>, <span class="dv">1</span>))</span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>df3 <span class="ot">&lt;-</span> <span class="fu">merge</span>(df1, df2)</span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df3, <span class="at">n=</span><span class="dv">8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df1<span class="ot">&lt;-</span> <span class="fu">untable</span>(df[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>)], <span class="at">num =</span> df[,<span class="dv">3</span>])<span class="sc">%&gt;%</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Count_Non_survivors <span class="sc">&gt;</span> <span class="dv">0</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dead =</span> <span class="fu">ifelse</span>(Count_Non_survivors<span class="sc">&gt;=</span><span class="dv">0</span>,<span class="dv">0</span>))</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>df2<span class="ot">&lt;-</span> <span class="fu">untable</span>(df[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">4</span>)], <span class="at">num =</span> df[,<span class="dv">2</span>])<span class="sc">%&gt;%</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(survivors <span class="sc">&gt;</span><span class="dv">0</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Survivors =</span> <span class="fu">ifelse</span>(survivors <span class="sc">&gt;</span><span class="dv">0</span>, <span class="dv">1</span>))</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>df3 <span class="ot">&lt;-</span> <span class="fu">merge</span>(df1, df2)</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df3, <span class="at">n=</span><span class="dv">8</span>)</span></code></pre></div>
 <pre><code>##   Mother_age Count_Non_survivors Birth_weight survivors dead Survivors
 ## 1         18                   1          4.5         4    0         1
 ## 2         18                   1          4.5         4    0         1
@@ -699,9 +703,9 @@ div.tocify {
 ## 6         18                   1          6.0        30    0         1
 ## 7         18                   1          6.0        30    0         1
 ## 8         18                   1          6.0        30    0         1</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(df3<span class="sc">$</span>dead)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(df3<span class="sc">$</span>dead)</span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fl">7.424e-4</span></span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fl">7.424e-4</span></span></code></pre></div>
 <pre><code>## [1] 0.0007424</code></pre>
 </div>
 

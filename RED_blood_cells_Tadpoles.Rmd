@@ -91,7 +91,7 @@ BCT[10:14,]
 
 ```{r}
 BCT2=untable(BCT[,c(1,2)], num =BCT[,3])
-#BCT2
+BCT2
 
 ```
 
@@ -104,10 +104,11 @@ Visualizing the data in a table similar to that published
 ```{r, out.width="50%"}
 BCT2a=BCT2 %>% 
   tabyl(length_corpuscles, body_lenght)
-#BCT2a
+BCT2a
 BCT3<-BCT2a %>% 
   select(1,10:19, 2:9)
 BCT3$length_corpuscles = as.factor(BCT3$length_corpuscles)
+BCT3
 ```
 
 

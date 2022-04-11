@@ -153,9 +153,19 @@ a<-ggplot(qf, aes(birth_weight, Alive_Dead))+
 a
 b<-ggplot(qf, aes(mother_age, Alive_Dead))+
   geom_jitter(size=.2, aes(colour=sex), height = .1)+
-  binomial_smooth()
+  binomial_smooth()+
+  geom_smooth(colour="red") # Modelo LOESS
 b
-p<-plot_grid(a,b)
+
+c<-ggplot(qf, aes(mother_age, Alive_Dead))+
+  geom_jitter(size=.2, aes(colour=sex), height = .1)+
+  binomial_smooth()+
+  geom_smooth(colour="red")+
+  coord_cartesian(ylim=c(0.8, 1.15))
+  
+c
+  # Modelo LOESS
+p<-plot_grid(a,b,c)
 p
 ggsave("a+b.png", p, width = 10, height = 7)
 ```
@@ -172,7 +182,8 @@ esquema
 
 
 ```{r}
-model1 <- glm(alive_dead ~ mother_age, family = binomial)
+names(df5)
+model1 <- glm(Alive_Dead ~ mother_age, family = binomial, data=df5 )
 x2 <- seq(min(mother_age), max(mother_age), 1.0)
 y2 <- predict(model1, list(mother_age = x2), type = "response")
 

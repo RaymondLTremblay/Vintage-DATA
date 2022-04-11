@@ -73,7 +73,8 @@ gt(mini)
 ```
 
 ```{r warning=FALSE, include=FALSE}
-T2i <- read_csv("csv_files/T2i.csv")
+library(readr)
+T2i <- read_csv("T2i.csv")
 ```
 
 ------------------------------------------------------------------------
