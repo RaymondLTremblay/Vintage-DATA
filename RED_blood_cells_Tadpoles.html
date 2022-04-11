@@ -13,7 +13,7 @@
 
 <title>Red Blood Cells Tadpoles</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -43,6 +43,7 @@
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
     </style>
+
 
 
 <style type="text/css">
@@ -177,6 +178,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -405,7 +409,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -418,7 +422,7 @@ div.tocify {
   <a href="Descripcion.html">Home</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Vintage Data
      
     <span class="caret"></span>
@@ -446,7 +450,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -485,12 +489,12 @@ div.tocify {
 <p>In this table we have the body lenght of the tadpoles and the length of the red Blood Cells. The data is available <a href="DATA/Red_blood_cells/Table_A_lenCorpuscles_Bodylen.xlsx">here</a> in an Excel file. To facilitate categorizing the information in the file the first value of the range is used of body length and length of blood corpuscles are shown and not the range of the category as in the table.</p>
 <hr />
 <p>Here we present the data in the similar format as the table in the previous figure.</p>
-<div id="thcvbqxtqb" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="pffypshfya" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#thcvbqxtqb .gt_table {
+#pffypshfya .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -515,7 +519,7 @@ div.tocify {
   border-left-color: #D3D3D3;
 }
 
-#thcvbqxtqb .gt_heading {
+#pffypshfya .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -527,33 +531,37 @@ div.tocify {
   border-right-color: #D3D3D3;
 }
 
-#thcvbqxtqb .gt_title {
+#pffypshfya .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
   padding-top: 4px;
   padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
 
-#thcvbqxtqb .gt_subtitle {
+#pffypshfya .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
   padding-top: 0;
   padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-#thcvbqxtqb .gt_bottom_border {
+#pffypshfya .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#thcvbqxtqb .gt_col_headings {
+#pffypshfya .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -568,7 +576,7 @@ div.tocify {
   border-right-color: #D3D3D3;
 }
 
-#thcvbqxtqb .gt_col_heading {
+#pffypshfya .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -588,7 +596,7 @@ div.tocify {
   overflow-x: hidden;
 }
 
-#thcvbqxtqb .gt_column_spanner_outer {
+#pffypshfya .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -600,15 +608,15 @@ div.tocify {
   padding-right: 4px;
 }
 
-#thcvbqxtqb .gt_column_spanner_outer:first-child {
+#pffypshfya .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#thcvbqxtqb .gt_column_spanner_outer:last-child {
+#pffypshfya .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#thcvbqxtqb .gt_column_spanner {
+#pffypshfya .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -620,8 +628,11 @@ div.tocify {
   width: 100%;
 }
 
-#thcvbqxtqb .gt_group_heading {
-  padding: 8px;
+#pffypshfya .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -642,7 +653,7 @@ div.tocify {
   vertical-align: middle;
 }
 
-#thcvbqxtqb .gt_empty_group_heading {
+#pffypshfya .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -657,15 +668,15 @@ div.tocify {
   vertical-align: middle;
 }
 
-#thcvbqxtqb .gt_from_md > :first-child {
+#pffypshfya .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#thcvbqxtqb .gt_from_md > :last-child {
+#pffypshfya .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#thcvbqxtqb .gt_row {
+#pffypshfya .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -684,7 +695,7 @@ div.tocify {
   overflow-x: hidden;
 }
 
-#thcvbqxtqb .gt_stub {
+#pffypshfya .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -693,10 +704,29 @@ div.tocify {
   border-right-style: solid;
   border-right-width: 2px;
   border-right-color: #D3D3D3;
-  padding-left: 12px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-#thcvbqxtqb .gt_summary_row {
+#pffypshfya .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#pffypshfya .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#pffypshfya .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -706,17 +736,26 @@ div.tocify {
   padding-right: 5px;
 }
 
-#thcvbqxtqb .gt_first_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
+#pffypshfya .gt_first_summary_row {
   border-top-style: solid;
-  border-top-width: 2px;
   border-top-color: #D3D3D3;
 }
 
-#thcvbqxtqb .gt_grand_summary_row {
+#pffypshfya .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#pffypshfya .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pffypshfya .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -726,7 +765,7 @@ div.tocify {
   padding-right: 5px;
 }
 
-#thcvbqxtqb .gt_first_grand_summary_row {
+#pffypshfya .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -736,11 +775,11 @@ div.tocify {
   border-top-color: #D3D3D3;
 }
 
-#thcvbqxtqb .gt_striped {
+#pffypshfya .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#thcvbqxtqb .gt_table_body {
+#pffypshfya .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -749,7 +788,7 @@ div.tocify {
   border-bottom-color: #D3D3D3;
 }
 
-#thcvbqxtqb .gt_footnotes {
+#pffypshfya .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -763,13 +802,16 @@ div.tocify {
   border-right-color: #D3D3D3;
 }
 
-#thcvbqxtqb .gt_footnote {
+#pffypshfya .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-#thcvbqxtqb .gt_sourcenotes {
+#pffypshfya .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -783,44 +825,71 @@ div.tocify {
   border-right-color: #D3D3D3;
 }
 
-#thcvbqxtqb .gt_sourcenote {
+#pffypshfya .gt_sourcenote {
   font-size: 90%;
-  padding: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-#thcvbqxtqb .gt_left {
+#pffypshfya .gt_left {
   text-align: left;
 }
 
-#thcvbqxtqb .gt_center {
+#pffypshfya .gt_center {
   text-align: center;
 }
 
-#thcvbqxtqb .gt_right {
+#pffypshfya .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#thcvbqxtqb .gt_font_normal {
+#pffypshfya .gt_font_normal {
   font-weight: normal;
 }
 
-#thcvbqxtqb .gt_font_bold {
+#pffypshfya .gt_font_bold {
   font-weight: bold;
 }
 
-#thcvbqxtqb .gt_font_italic {
+#pffypshfya .gt_font_italic {
   font-style: italic;
 }
 
-#thcvbqxtqb .gt_super {
+#pffypshfya .gt_super {
   font-size: 65%;
 }
 
-#thcvbqxtqb .gt_footnote_marks {
+#pffypshfya .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
-  font-size: 65%;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#pffypshfya .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#pffypshfya .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#pffypshfya .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#pffypshfya .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
 }
 </style>
 <table class="gt_table">
@@ -873,50 +942,1942 @@ div.tocify {
 <div id="untable-the-data-frame" class="section level2">
 <h2>Untable the data frame</h2>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>BCT2<span class="ot">=</span><span class="fu">untable</span>(BCT[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)], <span class="at">num =</span>BCT[,<span class="dv">3</span>])</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#BCT2</span></span></code></pre></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>BCT2</span></code></pre></div>
+<pre><code>##        length_corpuscles body_lenght
+## 1                   4.95       10.35
+## 2                   5.15        6.35
+## 3                   5.15        7.35
+## 4                   5.15       11.35
+## 5                   5.35        7.35
+## 6                   5.35       11.35
+## 7                   5.55        7.35
+## 8                   5.55       10.35
+## 8.1                 5.55       10.35
+## 9                   5.55       12.35
+## 10                  5.55       13.35
+## 11                  5.75        7.35
+## 11.1                5.75        7.35
+## 11.2                5.75        7.35
+## 12                  5.75        8.35
+## 13                  5.75        8.85
+## 14                  5.75        9.35
+## 15                  5.75       10.35
+## 15.1                5.75       10.35
+## 15.2                5.75       10.35
+## 15.3                5.75       10.35
+## 16                  5.95        6.35
+## 17                  5.95        7.35
+## 18                  5.95        7.85
+## 19                  5.95        8.35
+## 20                  5.95        8.85
+## 21                  5.95        9.35
+## 21.1                5.95        9.35
+## 22                  5.95        9.85
+## 22.1                5.95        9.85
+## 22.2                5.95        9.85
+## 22.3                5.95        9.85
+## 22.4                5.95        9.85
+## 23                  5.95       10.35
+## 23.1                5.95       10.35
+## 23.2                5.95       10.35
+## 23.3                5.95       10.35
+## 23.4                5.95       10.35
+## 23.5                5.95       10.35
+## 23.6                5.95       10.35
+## 23.7                5.95       10.35
+## 23.8                5.95       10.35
+## 23.9                5.95       10.35
+## 24                  5.95       10.85
+## 24.1                5.95       10.85
+## 25                  5.95       11.35
+## 25.1                5.95       11.35
+## 26                  5.95       12.35
+## 27                  5.95       13.35
+## 27.1                5.95       13.35
+## 28                  6.15        5.85
+## 29                  6.15        6.35
+## 30                  6.15        6.85
+## 31                  6.15        7.35
+## 31.1                6.15        7.35
+## 32                  6.15        7.85
+## 33                  6.15        8.35
+## 33.1                6.15        8.35
+## 34                  6.15        8.85
+## 34.1                6.15        8.85
+## 34.2                6.15        8.85
+## 34.3                6.15        8.85
+## 34.4                6.15        8.85
+## 34.5                6.15        8.85
+## 34.6                6.15        8.85
+## 35                  6.15        9.35
+## 35.1                6.15        9.35
+## 36                  6.15        9.85
+## 36.1                6.15        9.85
+## 36.2                6.15        9.85
+## 36.3                6.15        9.85
+## 37                  6.15       10.35
+## 37.1                6.15       10.35
+## 37.2                6.15       10.35
+## 37.3                6.15       10.35
+## 38                  6.15       10.85
+## 38.1                6.15       10.85
+## 39                  6.15       11.35
+## 39.1                6.15       11.35
+## 40                  6.15       11.85
+## 41                  6.15       12.35
+## 41.1                6.15       12.35
+## 41.2                6.15       12.35
+## 42                  6.15       13.35
+## 43                  6.15       13.85
+## 43.1                6.15       13.85
+## 44                  6.35        6.35
+## 45                  6.35        6.85
+## 45.1                6.35        6.85
+## 46                  6.35        7.35
+## 46.1                6.35        7.35
+## 46.2                6.35        7.35
+## 47                  6.35        7.85
+## 47.1                6.35        7.85
+## 47.2                6.35        7.85
+## 47.3                6.35        7.85
+## 48                  6.35        8.35
+## 48.1                6.35        8.35
+## 48.2                6.35        8.35
+## 48.3                6.35        8.35
+## 49                  6.35        8.85
+## 49.1                6.35        8.85
+## 49.2                6.35        8.85
+## 49.3                6.35        8.85
+## 49.4                6.35        8.85
+## 50                  6.35        9.35
+## 50.1                6.35        9.35
+## 51                  6.35        9.85
+## 51.1                6.35        9.85
+## 51.2                6.35        9.85
+## 51.3                6.35        9.85
+## 52                  6.35       10.35
+## 52.1                6.35       10.35
+## 52.2                6.35       10.35
+## 52.3                6.35       10.35
+## 52.4                6.35       10.35
+## 52.5                6.35       10.35
+## 52.6                6.35       10.35
+## 52.7                6.35       10.35
+## 52.8                6.35       10.35
+## 52.9                6.35       10.35
+## 52.10               6.35       10.35
+## 52.11               6.35       10.35
+## 52.12               6.35       10.35
+## 52.13               6.35       10.35
+## 52.14               6.35       10.35
+## 52.15               6.35       10.35
+## 53                  6.35       10.85
+## 53.1                6.35       10.85
+## 53.2                6.35       10.85
+## 54                  6.35       11.35
+## 55                  6.35       11.85
+## 56                  6.35       12.35
+## 56.1                6.35       12.35
+## 56.2                6.35       12.35
+## 56.3                6.35       12.35
+## 57                  6.35       13.35
+## 57.1                6.35       13.35
+## 58                  6.55        5.35
+## 58.1                6.55        5.35
+## 59                  6.55        6.35
+## 59.1                6.55        6.35
+## 59.2                6.55        6.35
+## 60                  6.55        6.85
+## 61                  6.55        7.35
+## 61.1                6.55        7.35
+## 62                  6.55        7.85
+## 63                  6.55        8.35
+## 63.1                6.55        8.35
+## 63.2                6.55        8.35
+## 63.3                6.55        8.35
+## 64                  6.55        8.85
+## 64.1                6.55        8.85
+## 64.2                6.55        8.85
+## 64.3                6.55        8.85
+## 64.4                6.55        8.85
+## 64.5                6.55        8.85
+## 64.6                6.55        8.85
+## 64.7                6.55        8.85
+## 64.8                6.55        8.85
+## 65                  6.55        9.35
+## 65.1                6.55        9.35
+## 65.2                6.55        9.35
+## 66                  6.55        9.85
+## 66.1                6.55        9.85
+## 66.2                6.55        9.85
+## 67                  6.55       10.85
+## 68                  6.55       11.35
+## 68.1                6.55       11.35
+## 69                  6.55       11.85
+## 70                  6.55       12.35
+## 70.1                6.55       12.35
+## 70.2                6.55       12.35
+## 71                  6.55       13.84
+## 72                  6.75        5.85
+## 73                  6.75        6.35
+## 73.1                6.75        6.35
+## 74                  6.75        6.85
+## 74.1                6.75        6.85
+## 75                  6.75        7.35
+## 75.1                6.75        7.35
+## 75.2                6.75        7.35
+## 76                  6.75        7.85
+## 76.1                6.75        7.85
+## 76.2                6.75        7.85
+## 76.3                6.75        7.85
+## 76.4                6.75        7.85
+## 76.5                6.75        7.85
+## 76.6                6.75        7.85
+## 77                  6.75        8.35
+## 77.1                6.75        8.35
+## 77.2                6.75        8.35
+## 77.3                6.75        8.35
+## 77.4                6.75        8.35
+## 77.5                6.75        8.35
+## 77.6                6.75        8.35
+## 77.7                6.75        8.35
+## 77.8                6.75        8.35
+## 78                  6.75        8.85
+## 78.1                6.75        8.85
+## 79                  6.75        9.35
+## 79.1                6.75        9.35
+## 79.2                6.75        9.35
+## 79.3                6.75        9.35
+## 79.4                6.75        9.35
+## 79.5                6.75        9.35
+## 79.6                6.75        9.35
+## 80                  6.75        9.85
+## 80.1                6.75        9.85
+## 80.2                6.75        9.85
+## 80.3                6.75        9.85
+## 80.4                6.75        9.85
+## 80.5                6.75        9.85
+## 80.6                6.75        9.85
+## 80.7                6.75        9.85
+## 80.8                6.75        9.85
+## 80.9                6.75        9.85
+## 81                  6.75       10.35
+## 81.1                6.75       10.35
+## 81.2                6.75       10.35
+## 81.3                6.75       10.35
+## 81.4                6.75       10.35
+## 81.5                6.75       10.35
+## 81.6                6.75       10.35
+## 81.7                6.75       10.35
+## 81.8                6.75       10.35
+## 81.9                6.75       10.35
+## 81.10               6.75       10.35
+## 81.11               6.75       10.35
+## 82                  6.75       10.85
+## 82.1                6.75       10.85
+## 82.2                6.75       10.85
+## 83                  6.75       11.35
+## 83.1                6.75       11.35
+## 83.2                6.75       11.35
+## 83.3                6.75       11.35
+## 84                  6.75       11.85
+## 84.1                6.75       11.85
+## 85                  6.75       12.35
+## 85.1                6.75       12.35
+## 85.2                6.75       12.35
+## 85.3                6.75       12.35
+## 86                  6.75       13.35
+## 86.1                6.75       13.35
+## 87                  6.95        5.35
+## 88                  6.95        5.85
+## 88.1                6.95        5.85
+## 88.2                6.95        5.85
+## 88.3                6.95        5.85
+## 89                  6.95        6.35
+## 89.1                6.95        6.35
+## 89.2                6.95        6.35
+## 89.3                6.95        6.35
+## 89.4                6.95        6.35
+## 89.5                6.95        6.35
+## 89.6                6.95        6.35
+## 90                  6.95        6.85
+## 90.1                6.95        6.85
+## 90.2                6.95        6.85
+## 90.3                6.95        6.85
+## 90.4                6.95        6.85
+## 90.5                6.95        6.85
+## 90.6                6.95        6.85
+## 90.7                6.95        6.85
+## 91                  6.95        7.35
+## 91.1                6.95        7.35
+## 91.2                6.95        7.35
+## 91.3                6.95        7.35
+## 91.4                6.95        7.35
+## 91.5                6.95        7.35
+## 91.6                6.95        7.35
+## 91.7                6.95        7.35
+## 92                  6.95        7.85
+## 92.1                6.95        7.85
+## 92.2                6.95        7.85
+## 92.3                6.95        7.85
+## 92.4                6.95        7.85
+## 92.5                6.95        7.85
+## 92.6                6.95        7.85
+## 92.7                6.95        7.85
+## 92.8                6.95        7.85
+## 93                  6.95        8.35
+## 93.1                6.95        8.35
+## 93.2                6.95        8.35
+## 93.3                6.95        8.35
+## 93.4                6.95        8.35
+## 93.5                6.95        8.35
+## 93.6                6.95        8.35
+## 93.7                6.95        8.35
+## 93.8                6.95        8.35
+## 93.9                6.95        8.35
+## 93.10               6.95        8.35
+## 93.11               6.95        8.35
+## 93.12               6.95        8.35
+## 93.13               6.95        8.35
+## 94                  6.95        8.85
+## 94.1                6.95        8.85
+## 94.2                6.95        8.85
+## 94.3                6.95        8.85
+## 94.4                6.95        8.85
+## 94.5                6.95        8.85
+## 94.6                6.95        8.85
+## 94.7                6.95        8.85
+## 94.8                6.95        8.85
+## 95                  6.95        9.35
+## 95.1                6.95        9.35
+## 95.2                6.95        9.35
+## 95.3                6.95        9.35
+## 95.4                6.95        9.35
+## 95.5                6.95        9.35
+## 95.6                6.95        9.35
+## 95.7                6.95        9.35
+## 95.8                6.95        9.35
+## 95.9                6.95        9.35
+## 95.10               6.95        9.35
+## 96                  6.95        9.85
+## 96.1                6.95        9.85
+## 96.2                6.95        9.85
+## 96.3                6.95        9.85
+## 96.4                6.95        9.85
+## 96.5                6.95        9.85
+## 96.6                6.95        9.85
+## 96.7                6.95        9.85
+## 96.8                6.95        9.85
+## 97                  6.95       10.35
+## 97.1                6.95       10.35
+## 97.2                6.95       10.35
+## 97.3                6.95       10.35
+## 97.4                6.95       10.35
+## 97.5                6.95       10.35
+## 97.6                6.95       10.35
+## 97.7                6.95       10.35
+## 97.8                6.95       10.35
+## 97.9                6.95       10.35
+## 97.10               6.95       10.35
+## 97.11               6.95       10.35
+## 97.12               6.95       10.35
+## 97.13               6.95       10.35
+## 97.14               6.95       10.35
+## 97.15               6.95       10.35
+## 97.16               6.95       10.35
+## 98                  6.95       10.85
+## 98.1                6.95       10.85
+## 98.2                6.95       10.85
+## 98.3                6.95       10.85
+## 98.4                6.95       10.85
+## 98.5                6.95       10.85
+## 98.6                6.95       10.85
+## 98.7                6.95       10.85
+## 98.8                6.95       10.85
+## 98.9                6.95       10.85
+## 98.10               6.95       10.85
+## 98.11               6.95       10.85
+## 98.12               6.95       10.85
+## 99                  6.95       11.35
+## 99.1                6.95       11.35
+## 100                 6.95       11.85
+## 101                 6.95       12.35
+## 101.1               6.95       12.35
+## 101.2               6.95       12.35
+## 102                 6.95       13.35
+## 102.1               6.95       13.35
+## 102.2               6.95       13.35
+## 103                 6.95       13.85
+## 103.1               6.95       13.85
+## 103.2               6.95       13.85
+## 104                 7.15        5.35
+## 104.1               7.15        5.35
+## 104.2               7.15        5.35
+## 104.3               7.15        5.35
+## 104.4               7.15        5.35
+## 104.5               7.15        5.35
+## 105                 7.15        5.85
+## 105.1               7.15        5.85
+## 105.2               7.15        5.85
+## 106                 7.15        6.35
+## 106.1               7.15        6.35
+## 106.2               7.15        6.35
+## 106.3               7.15        6.35
+## 106.4               7.15        6.35
+## 106.5               7.15        6.35
+## 106.6               7.15        6.35
+## 106.7               7.15        6.35
+## 106.8               7.15        6.35
+## 107                 7.15        6.85
+## 107.1               7.15        6.85
+## 107.2               7.15        6.85
+## 107.3               7.15        6.85
+## 107.4               7.15        6.85
+## 107.5               7.15        6.85
+## 107.6               7.15        6.85
+## 107.7               7.15        6.85
+## 107.8               7.15        6.85
+## 107.9               7.15        6.85
+## 107.10              7.15        6.85
+## 108                 7.15        7.35
+## 108.1               7.15        7.35
+## 108.2               7.15        7.35
+## 108.3               7.15        7.35
+## 108.4               7.15        7.35
+## 108.5               7.15        7.35
+## 108.6               7.15        7.35
+## 109                 7.15        7.85
+## 109.1               7.15        7.85
+## 109.2               7.15        7.85
+## 109.3               7.15        7.85
+## 109.4               7.15        7.85
+## 109.5               7.15        7.85
+## 109.6               7.15        7.85
+## 109.7               7.15        7.85
+## 109.8               7.15        7.85
+## 109.9               7.15        7.85
+## 109.10              7.15        7.85
+## 109.11              7.15        7.85
+## 109.12              7.15        7.85
+## 109.13              7.15        7.85
+## 109.14              7.15        7.85
+## 109.15              7.15        7.85
+## 109.16              7.15        7.85
+## 109.17              7.15        7.85
+## 110                 7.15        8.35
+## 110.1               7.15        8.35
+## 110.2               7.15        8.35
+## 110.3               7.15        8.35
+## 110.4               7.15        8.35
+## 110.5               7.15        8.35
+## 110.6               7.15        8.35
+## 110.7               7.15        8.35
+## 110.8               7.15        8.35
+## 110.9               7.15        8.35
+## 110.10              7.15        8.35
+## 110.11              7.15        8.35
+## 110.12              7.15        8.35
+## 110.13              7.15        8.35
+## 110.14              7.15        8.35
+## 110.15              7.15        8.35
+## 110.16              7.15        8.35
+## 110.17              7.15        8.35
+## 110.18              7.15        8.35
+## 110.19              7.15        8.35
+## 111                 7.15        8.85
+## 111.1               7.15        8.85
+## 111.2               7.15        8.85
+## 111.3               7.15        8.85
+## 111.4               7.15        8.85
+## 111.5               7.15        8.85
+## 111.6               7.15        8.85
+## 111.7               7.15        8.85
+## 111.8               7.15        8.85
+## 111.9               7.15        8.85
+## 111.10              7.15        8.85
+## 111.11              7.15        8.85
+## 111.12              7.15        8.85
+## 111.13              7.15        8.85
+## 111.14              7.15        8.85
+## 112                 7.15        9.35
+## 112.1               7.15        9.35
+## 112.2               7.15        9.35
+## 112.3               7.15        9.35
+## 112.4               7.15        9.35
+## 112.5               7.15        9.35
+## 112.6               7.15        9.35
+## 112.7               7.15        9.35
+## 112.8               7.15        9.35
+## 112.9               7.15        9.35
+## 112.10              7.15        9.35
+## 112.11              7.15        9.35
+## 112.12              7.15        9.35
+## 112.13              7.15        9.35
+## 112.14              7.15        9.35
+## 112.15              7.15        9.35
+## 113                 7.15        9.85
+## 113.1               7.15        9.85
+## 113.2               7.15        9.85
+## 113.3               7.15        9.85
+## 113.4               7.15        9.85
+## 113.5               7.15        9.85
+## 113.6               7.15        9.85
+## 113.7               7.15        9.85
+## 113.8               7.15        9.85
+## 113.9               7.15        9.85
+## 113.10              7.15        9.85
+## 113.11              7.15        9.85
+## 114                 7.15       10.35
+## 114.1               7.15       10.35
+## 114.2               7.15       10.35
+## 114.3               7.15       10.35
+## 114.4               7.15       10.35
+## 114.5               7.15       10.35
+## 114.6               7.15       10.35
+## 114.7               7.15       10.35
+## 114.8               7.15       10.35
+## 114.9               7.15       10.35
+## 114.10              7.15       10.35
+## 114.11              7.15       10.35
+## 114.12              7.15       10.35
+## 114.13              7.15       10.35
+## 114.14              7.15       10.35
+## 114.15              7.15       10.35
+## 114.16              7.15       10.35
+## 114.17              7.15       10.35
+## 114.18              7.15       10.35
+## 115                 7.15       10.85
+## 115.1               7.15       10.85
+## 115.2               7.15       10.85
+## 115.3               7.15       10.85
+## 115.4               7.15       10.85
+## 115.5               7.15       10.85
+## 115.6               7.15       10.85
+## 115.7               7.15       10.85
+## 115.8               7.15       10.85
+## 115.9               7.15       10.85
+## 115.10              7.15       10.85
+## 116                 7.15       11.35
+## 116.1               7.15       11.35
+## 116.2               7.15       11.35
+## 116.3               7.15       11.35
+## 117                 7.15       11.85
+## 117.1               7.15       11.85
+## 117.2               7.15       11.85
+## 118                 7.15       12.35
+## 118.1               7.15       12.35
+## 118.2               7.15       12.35
+## 118.3               7.15       12.35
+## 118.4               7.15       12.35
+## 118.5               7.15       12.35
+## 118.6               7.15       12.35
+## 118.7               7.15       12.35
+## 118.8               7.15       12.35
+## 118.9               7.15       12.35
+## 118.10              7.15       12.35
+## 118.11              7.15       12.35
+## 118.12              7.15       12.35
+## 118.13              7.15       12.35
+## 118.14              7.15       12.35
+## 118.15              7.15       12.35
+## 119                 7.15       13.35
+## 119.1               7.15       13.35
+## 119.2               7.15       13.35
+## 119.3               7.15       13.35
+## 119.4               7.15       13.35
+## 119.5               7.15       13.35
+## 119.6               7.15       13.35
+## 120                 7.15       13.85
+## 120.1               7.15       13.85
+## 120.2               7.15       13.85
+## 120.3               7.15       13.85
+## 120.4               7.15       13.85
+## 121                 7.35        5.35
+## 121.1               7.35        5.35
+## 121.2               7.35        5.35
+## 121.3               7.35        5.35
+## 122                 7.35        5.85
+## 122.1               7.35        5.85
+## 122.2               7.35        5.85
+## 123                 7.35        6.35
+## 123.1               7.35        6.35
+## 123.2               7.35        6.35
+## 123.3               7.35        6.35
+## 123.4               7.35        6.35
+## 123.5               7.35        6.35
+## 123.6               7.35        6.35
+## 124                 7.35        6.85
+## 124.1               7.35        6.85
+## 124.2               7.35        6.85
+## 124.3               7.35        6.85
+## 124.4               7.35        6.85
+## 124.5               7.35        6.85
+## 124.6               7.35        6.85
+## 124.7               7.35        6.85
+## 124.8               7.35        6.85
+## 124.9               7.35        6.85
+## 124.10              7.35        6.85
+## 124.11              7.35        6.85
+## 124.12              7.35        6.85
+## 124.13              7.35        6.85
+## 124.14              7.35        6.85
+## 124.15              7.35        6.85
+## 124.16              7.35        6.85
+## 125                 7.35        7.35
+## 125.1               7.35        7.35
+## 125.2               7.35        7.35
+## 125.3               7.35        7.35
+## 125.4               7.35        7.35
+## 125.5               7.35        7.35
+## 125.6               7.35        7.35
+## 125.7               7.35        7.35
+## 125.8               7.35        7.35
+## 125.9               7.35        7.35
+## 126                 7.35        7.85
+## 126.1               7.35        7.85
+## 126.2               7.35        7.85
+## 126.3               7.35        7.85
+## 126.4               7.35        7.85
+## 126.5               7.35        7.85
+## 126.6               7.35        7.85
+## 126.7               7.35        7.85
+## 126.8               7.35        7.85
+## 126.9               7.35        7.85
+## 126.10              7.35        7.85
+## 127                 7.35        8.35
+## 127.1               7.35        8.35
+## 127.2               7.35        8.35
+## 127.3               7.35        8.35
+## 127.4               7.35        8.35
+## 127.5               7.35        8.35
+## 127.6               7.35        8.35
+## 127.7               7.35        8.35
+## 127.8               7.35        8.35
+## 127.9               7.35        8.35
+## 127.10              7.35        8.35
+## 127.11              7.35        8.35
+## 127.12              7.35        8.35
+## 127.13              7.35        8.35
+## 127.14              7.35        8.35
+## 128                 7.35        8.85
+## 128.1               7.35        8.85
+## 128.2               7.35        8.85
+## 128.3               7.35        8.85
+## 128.4               7.35        8.85
+## 128.5               7.35        8.85
+## 128.6               7.35        8.85
+## 128.7               7.35        8.85
+## 128.8               7.35        8.85
+## 128.9               7.35        8.85
+## 129                 7.35        9.35
+## 129.1               7.35        9.35
+## 129.2               7.35        9.35
+## 129.3               7.35        9.35
+## 129.4               7.35        9.35
+## 129.5               7.35        9.35
+## 129.6               7.35        9.35
+## 129.7               7.35        9.35
+## 130                 7.35        9.85
+## 130.1               7.35        9.85
+## 130.2               7.35        9.85
+## 130.3               7.35        9.85
+## 130.4               7.35        9.85
+## 130.5               7.35        9.85
+## 130.6               7.35        9.85
+## 130.7               7.35        9.85
+## 130.8               7.35        9.85
+## 131                 7.35       10.35
+## 131.1               7.35       10.35
+## 131.2               7.35       10.35
+## 131.3               7.35       10.35
+## 131.4               7.35       10.35
+## 131.5               7.35       10.35
+## 131.6               7.35       10.35
+## 131.7               7.35       10.35
+## 131.8               7.35       10.35
+## 131.9               7.35       10.35
+## 131.10              7.35       10.35
+## 131.11              7.35       10.35
+## 131.12              7.35       10.35
+## 131.13              7.35       10.35
+## 131.14              7.35       10.35
+## 132                 7.35       10.85
+## 132.1               7.35       10.85
+## 132.2               7.35       10.85
+## 132.3               7.35       10.85
+## 132.4               7.35       10.85
+## 132.5               7.35       10.85
+## 132.6               7.35       10.85
+## 132.7               7.35       10.85
+## 132.8               7.35       10.85
+## 133                 7.35       11.35
+## 133.1               7.35       11.35
+## 133.2               7.35       11.35
+## 133.3               7.35       11.35
+## 133.4               7.35       11.35
+## 133.5               7.35       11.35
+## 133.6               7.35       11.35
+## 133.7               7.35       11.35
+## 134                 7.35       11.85
+## 135                 7.35       12.35
+## 135.1               7.35       12.35
+## 135.2               7.35       12.35
+## 135.3               7.35       12.35
+## 135.4               7.35       12.35
+## 136                 7.35       13.35
+## 137                 7.35       13.85
+## 138                 7.55        5.85
+## 138.1               7.55        5.85
+## 138.2               7.55        5.85
+## 138.3               7.55        5.85
+## 138.4               7.55        5.85
+## 138.5               7.55        5.85
+## 138.6               7.55        5.85
+## 138.7               7.55        5.85
+## 138.8               7.55        5.85
+## 139                 7.55        6.35
+## 139.1               7.55        6.35
+## 139.2               7.55        6.35
+## 139.3               7.55        6.35
+## 139.4               7.55        6.35
+## 140                 7.55        6.85
+## 140.1               7.55        6.85
+## 140.2               7.55        6.85
+## 140.3               7.55        6.85
+## 140.4               7.55        6.85
+## 140.5               7.55        6.85
+## 141                 7.55        7.35
+## 141.1               7.55        7.35
+## 141.2               7.55        7.35
+## 141.3               7.55        7.35
+## 141.4               7.55        7.35
+## 141.5               7.55        7.35
+## 142                 7.55        7.85
+## 142.1               7.55        7.85
+## 142.2               7.55        7.85
+## 142.3               7.55        7.85
+## 142.4               7.55        7.85
+## 143                 7.55        8.35
+## 143.1               7.55        8.35
+## 143.2               7.55        8.35
+## 143.3               7.55        8.35
+## 143.4               7.55        8.35
+## 143.5               7.55        8.35
+## 143.6               7.55        8.35
+## 143.7               7.55        8.35
+## 143.8               7.55        8.35
+## 143.9               7.55        8.35
+## 143.10              7.55        8.35
+## 143.11              7.55        8.35
+## 143.12              7.55        8.35
+## 143.13              7.55        8.35
+## 143.14              7.55        8.35
+## 143.15              7.55        8.35
+## 143.16              7.55        8.35
+## 143.17              7.55        8.35
+## 143.18              7.55        8.35
+## 143.19              7.55        8.35
+## 143.20              7.55        8.35
+## 143.21              7.55        8.35
+## 143.22              7.55        8.35
+## 143.23              7.55        8.35
+## 143.24              7.55        8.35
+## 143.25              7.55        8.35
+## 143.26              7.55        8.35
+## 144                 7.55        8.85
+## 144.1               7.55        8.85
+## 144.2               7.55        8.85
+## 144.3               7.55        8.85
+## 144.4               7.55        8.85
+## 144.5               7.55        8.85
+## 144.6               7.55        8.85
+## 144.7               7.55        8.85
+## 144.8               7.55        8.85
+## 144.9               7.55        8.85
+## 144.10              7.55        8.85
+## 144.11              7.55        8.85
+## 144.12              7.55        8.85
+## 144.13              7.55        8.85
+## 144.14              7.55        8.85
+## 145                 7.55        9.35
+## 145.1               7.55        9.35
+## 145.2               7.55        9.35
+## 145.3               7.55        9.35
+## 145.4               7.55        9.35
+## 145.5               7.55        9.35
+## 145.6               7.55        9.35
+## 145.7               7.55        9.35
+## 145.8               7.55        9.35
+## 145.9               7.55        9.35
+## 145.10              7.55        9.35
+## 146                 7.55        9.85
+## 146.1               7.55        9.85
+## 146.2               7.55        9.85
+## 147                 7.55       10.35
+## 147.1               7.55       10.35
+## 147.2               7.55       10.35
+## 147.3               7.55       10.35
+## 147.4               7.55       10.35
+## 147.5               7.55       10.35
+## 147.6               7.55       10.35
+## 147.7               7.55       10.35
+## 147.8               7.55       10.35
+## 148                 7.55       10.85
+## 148.1               7.55       10.85
+## 148.2               7.55       10.85
+## 148.3               7.55       10.85
+## 148.4               7.55       10.85
+## 149                 7.55       11.35
+## 149.1               7.55       11.35
+## 149.2               7.55       11.35
+## 150                 7.55       11.85
+## 150.1               7.55       11.85
+## 150.2               7.55       11.85
+## 150.3               7.55       11.85
+## 151                 7.55       12.35
+## 151.1               7.55       12.35
+## 151.2               7.55       12.35
+## 152                 7.55       13.35
+## 153                 7.55       13.85
+## 153.1               7.55       13.85
+## 154                 7.75        5.35
+## 154.1               7.75        5.35
+## 154.2               7.75        5.35
+## 154.3               7.75        5.35
+## 154.4               7.75        5.35
+## 155                 7.75        5.85
+## 155.1               7.75        5.85
+## 155.2               7.75        5.85
+## 155.3               7.75        5.85
+## 155.4               7.75        5.85
+## 155.5               7.75        5.85
+## 155.6               7.75        5.85
+## 155.7               7.75        5.85
+## 155.8               7.75        5.85
+## 155.9               7.75        5.85
+## 156                 7.75        6.35
+## 156.1               7.75        6.35
+## 156.2               7.75        6.35
+## 156.3               7.75        6.35
+## 156.4               7.75        6.35
+## 156.5               7.75        6.35
+## 156.6               7.75        6.35
+## 156.7               7.75        6.35
+## 156.8               7.75        6.35
+## 156.9               7.75        6.35
+## 156.10              7.75        6.35
+## 156.11              7.75        6.35
+## 156.12              7.75        6.35
+## 157                 7.75        6.85
+## 157.1               7.75        6.85
+## 157.2               7.75        6.85
+## 157.3               7.75        6.85
+## 157.4               7.75        6.85
+## 157.5               7.75        6.85
+## 157.6               7.75        6.85
+## 157.7               7.75        6.85
+## 157.8               7.75        6.85
+## 157.9               7.75        6.85
+## 157.10              7.75        6.85
+## 157.11              7.75        6.85
+## 157.12              7.75        6.85
+## 157.13              7.75        6.85
+## 157.14              7.75        6.85
+## 157.15              7.75        6.85
+## 157.16              7.75        6.85
+## 157.17              7.75        6.85
+## 157.18              7.75        6.85
+## 157.19              7.75        6.85
+## 158                 7.75        7.35
+## 158.1               7.75        7.35
+## 158.2               7.75        7.35
+## 158.3               7.75        7.35
+## 158.4               7.75        7.35
+## 158.5               7.75        7.35
+## 158.6               7.75        7.35
+## 158.7               7.75        7.35
+## 158.8               7.75        7.35
+## 158.9               7.75        7.35
+## 159                 7.75        7.85
+## 159.1               7.75        7.85
+## 159.2               7.75        7.85
+## 159.3               7.75        7.85
+## 159.4               7.75        7.85
+## 159.5               7.75        7.85
+## 159.6               7.75        7.85
+## 159.7               7.75        7.85
+## 159.8               7.75        7.85
+## 159.9               7.75        7.85
+## 159.10              7.75        7.85
+## 159.11              7.75        7.85
+## 159.12              7.75        7.85
+## 159.13              7.75        7.85
+## 159.14              7.75        7.85
+## 159.15              7.75        7.85
+## 159.16              7.75        7.85
+## 159.17              7.75        7.85
+## 160                 7.75        8.35
+## 160.1               7.75        8.35
+## 160.2               7.75        8.35
+## 160.3               7.75        8.35
+## 160.4               7.75        8.35
+## 160.5               7.75        8.35
+## 160.6               7.75        8.35
+## 160.7               7.75        8.35
+## 160.8               7.75        8.35
+## 160.9               7.75        8.35
+## 160.10              7.75        8.35
+## 160.11              7.75        8.35
+## 160.12              7.75        8.35
+## 160.13              7.75        8.35
+## 160.14              7.75        8.35
+## 160.15              7.75        8.35
+## 160.16              7.75        8.35
+## 160.17              7.75        8.35
+## 160.18              7.75        8.35
+## 160.19              7.75        8.35
+## 160.20              7.75        8.35
+## 160.21              7.75        8.35
+## 161                 7.75        8.85
+## 161.1               7.75        8.85
+## 161.2               7.75        8.85
+## 161.3               7.75        8.85
+## 161.4               7.75        8.85
+## 161.5               7.75        8.85
+## 161.6               7.75        8.85
+## 161.7               7.75        8.85
+## 161.8               7.75        8.85
+## 161.9               7.75        8.85
+## 161.10              7.75        8.85
+## 161.11              7.75        8.85
+## 162                 7.75        9.35
+## 162.1               7.75        9.35
+## 162.2               7.75        9.35
+## 162.3               7.75        9.35
+## 162.4               7.75        9.35
+## 162.5               7.75        9.35
+## 162.6               7.75        9.35
+## 162.7               7.75        9.35
+## 162.8               7.75        9.35
+## 162.9               7.75        9.35
+## 162.10              7.75        9.35
+## 162.11              7.75        9.35
+## 162.12              7.75        9.35
+## 162.13              7.75        9.35
+## 162.14              7.75        9.35
+## 162.15              7.75        9.35
+## 162.16              7.75        9.35
+## 162.17              7.75        9.35
+## 162.18              7.75        9.35
+## 162.19              7.75        9.35
+## 162.20              7.75        9.35
+## 163                 7.75        9.85
+## 163.1               7.75        9.85
+## 163.2               7.75        9.85
+## 163.3               7.75        9.85
+## 163.4               7.75        9.85
+## 163.5               7.75        9.85
+## 163.6               7.75        9.85
+## 163.7               7.75        9.85
+## 163.8               7.75        9.85
+## 163.9               7.75        9.85
+## 164                 7.75       10.35
+## 164.1               7.75       10.35
+## 164.2               7.75       10.35
+## 164.3               7.75       10.35
+## 164.4               7.75       10.35
+## 164.5               7.75       10.35
+## 164.6               7.75       10.35
+## 164.7               7.75       10.35
+## 164.8               7.75       10.35
+## 164.9               7.75       10.35
+## 164.10              7.75       10.35
+## 165                 7.75       10.85
+## 165.1               7.75       10.85
+## 165.2               7.75       10.85
+## 165.3               7.75       10.85
+## 165.4               7.75       10.85
+## 165.5               7.75       10.85
+## 165.6               7.75       10.85
+## 165.7               7.75       10.85
+## 165.8               7.75       10.85
+## 165.9               7.75       10.85
+## 165.10              7.75       10.85
+## 166                 7.75       11.35
+## 166.1               7.75       11.35
+## 166.2               7.75       11.35
+## 167                 7.75       11.85
+## 167.1               7.75       11.85
+## 167.2               7.75       11.85
+## 168                 7.75       12.35
+## 168.1               7.75       12.35
+## 168.2               7.75       12.35
+## 168.3               7.75       12.35
+## 168.4               7.75       12.35
+## 168.5               7.75       12.35
+## 168.6               7.75       12.35
+## 168.7               7.75       12.35
+## 168.8               7.75       12.35
+## 168.9               7.75       12.35
+## 169                 7.75       13.35
+## 170                 7.95       13.85
+## 170.1               7.95       13.85
+## 171                 7.95        5.35
+## 171.1               7.95        5.35
+## 171.2               7.95        5.35
+## 171.3               7.95        5.35
+## 171.4               7.95        5.35
+## 171.5               7.95        5.35
+## 171.6               7.95        5.35
+## 171.7               7.95        5.35
+## 171.8               7.95        5.35
+## 171.9               7.95        5.35
+## 171.10              7.95        5.35
+## 171.11              7.95        5.35
+## 171.12              7.95        5.35
+## 172                 7.95        5.85
+## 172.1               7.95        5.85
+## 172.2               7.95        5.85
+## 172.3               7.95        5.85
+## 172.4               7.95        5.85
+## 172.5               7.95        5.85
+## 172.6               7.95        5.85
+## 172.7               7.95        5.85
+## 172.8               7.95        5.85
+## 172.9               7.95        5.85
+## 173                 7.95        6.35
+## 173.1               7.95        6.35
+## 173.2               7.95        6.35
+## 173.3               7.95        6.35
+## 173.4               7.95        6.35
+## 173.5               7.95        6.35
+## 173.6               7.95        6.35
+## 173.7               7.95        6.35
+## 174                 7.95        6.85
+## 174.1               7.95        6.85
+## 174.2               7.95        6.85
+## 174.3               7.95        6.85
+## 174.4               7.95        6.85
+## 174.5               7.95        6.85
+## 174.6               7.95        6.85
+## 174.7               7.95        6.85
+## 174.8               7.95        6.85
+## 174.9               7.95        6.85
+## 174.10              7.95        6.85
+## 174.11              7.95        6.85
+## 174.12              7.95        6.85
+## 174.13              7.95        6.85
+## 174.14              7.95        6.85
+## 174.15              7.95        6.85
+## 174.16              7.95        6.85
+## 175                 7.95        7.35
+## 175.1               7.95        7.35
+## 175.2               7.95        7.35
+## 175.3               7.95        7.35
+## 175.4               7.95        7.35
+## 176                 7.95        7.85
+## 176.1               7.95        7.85
+## 176.2               7.95        7.85
+## 176.3               7.95        7.85
+## 176.4               7.95        7.85
+## 176.5               7.95        7.85
+## 176.6               7.95        7.85
+## 176.7               7.95        7.85
+## 176.8               7.95        7.85
+## 176.9               7.95        7.85
+## 176.10              7.95        7.85
+## 176.11              7.95        7.85
+## 177                 7.95        8.35
+## 177.1               7.95        8.35
+## 177.2               7.95        8.35
+## 177.3               7.95        8.35
+## 177.4               7.95        8.35
+## 177.5               7.95        8.35
+## 177.6               7.95        8.35
+## 177.7               7.95        8.35
+## 177.8               7.95        8.35
+## 177.9               7.95        8.35
+## 177.10              7.95        8.35
+## 177.11              7.95        8.35
+## 177.12              7.95        8.35
+## 177.13              7.95        8.35
+## 177.14              7.95        8.35
+## 177.15              7.95        8.35
+## 177.16              7.95        8.35
+## 177.17              7.95        8.35
+## 177.18              7.95        8.35
+## 177.19              7.95        8.35
+## 177.20              7.95        8.35
+## 177.21              7.95        8.35
+## 177.22              7.95        8.35
+## 177.23              7.95        8.35
+## 178                 7.95        8.85
+## 178.1               7.95        8.85
+## 178.2               7.95        8.85
+## 178.3               7.95        8.85
+## 178.4               7.95        8.85
+## 178.5               7.95        8.85
+## 178.6               7.95        8.85
+## 178.7               7.95        8.85
+## 178.8               7.95        8.85
+## 178.9               7.95        8.85
+## 178.10              7.95        8.85
+## 178.11              7.95        8.85
+## 178.12              7.95        8.85
+## 178.13              7.95        8.85
+## 178.14              7.95        8.85
+## 179                 7.95        9.35
+## 179.1               7.95        9.35
+## 179.2               7.95        9.35
+## 179.3               7.95        9.35
+## 179.4               7.95        9.35
+## 179.5               7.95        9.35
+## 179.6               7.95        9.35
+## 179.7               7.95        9.35
+## 180                 7.95        9.85
+## 180.1               7.95        9.85
+## 180.2               7.95        9.85
+## 180.3               7.95        9.85
+## 180.4               7.95        9.85
+## 180.5               7.95        9.85
+## 180.6               7.95        9.85
+## 180.7               7.95        9.85
+## 180.8               7.95        9.85
+## 181                 7.95       10.35
+## 181.1               7.95       10.35
+## 181.2               7.95       10.35
+## 181.3               7.95       10.35
+## 181.4               7.95       10.35
+## 181.5               7.95       10.35
+## 181.6               7.95       10.35
+## 181.7               7.95       10.35
+## 181.8               7.95       10.35
+## 181.9               7.95       10.35
+## 181.10              7.95       10.35
+## 181.11              7.95       10.35
+## 181.12              7.95       10.35
+## 181.13              7.95       10.35
+## 181.14              7.95       10.35
+## 181.15              7.95       10.35
+## 181.16              7.95       10.35
+## 181.17              7.95       10.35
+## 182                 7.95       10.85
+## 182.1               7.95       10.85
+## 182.2               7.95       10.85
+## 182.3               7.95       10.85
+## 182.4               7.95       10.85
+## 182.5               7.95       10.85
+## 182.6               7.95       10.85
+## 182.7               7.95       10.85
+## 182.8               7.95       10.85
+## 182.9               7.95       10.85
+## 182.10              7.95       10.85
+## 183                 7.95       11.35
+## 183.1               7.95       11.35
+## 183.2               7.95       11.35
+## 183.3               7.95       11.35
+## 183.4               7.95       11.35
+## 184                 7.95       11.85
+## 184.1               7.95       11.85
+## 184.2               7.95       11.85
+## 184.3               7.95       11.85
+## 184.4               7.95       11.85
+## 185                 7.95       12.35
+## 185.1               7.95       12.35
+## 185.2               7.95       12.35
+## 185.3               7.95       12.35
+## 185.4               7.95       12.35
+## 186                 7.95       13.35
+## 187                 7.95       13.85
+## 188                 8.15        5.35
+## 188.1               8.15        5.35
+## 188.2               8.15        5.35
+## 188.3               8.15        5.35
+## 188.4               8.15        5.35
+## 189                 8.15        5.85
+## 189.1               8.15        5.85
+## 189.2               8.15        5.85
+## 189.3               8.15        5.85
+## 189.4               8.15        5.85
+## 190                 8.15        6.35
+## 190.1               8.15        6.35
+## 190.2               8.15        6.35
+## 190.3               8.15        6.35
+## 190.4               8.15        6.35
+## 190.5               8.15        6.35
+## 190.6               8.15        6.35
+## 190.7               8.15        6.35
+## 190.8               8.15        6.35
+## 190.9               8.15        6.35
+## 191                 8.15        6.85
+## 191.1               8.15        6.85
+## 191.2               8.15        6.85
+## 191.3               8.15        6.85
+## 191.4               8.15        6.85
+## 191.5               8.15        6.85
+## 191.6               8.15        6.85
+## 191.7               8.15        6.85
+## 191.8               8.15        6.85
+## 191.9               8.15        6.85
+## 191.10              8.15        6.85
+## 191.11              8.15        6.85
+## 191.12              8.15        6.85
+## 191.13              8.15        6.85
+## 191.14              8.15        6.85
+## 191.15              8.15        6.85
+## 191.16              8.15        6.85
+## 191.17              8.15        6.85
+## 191.18              8.15        6.85
+## 191.19              8.15        6.85
+## 191.20              8.15        6.85
+## 192                 8.15        7.35
+## 192.1               8.15        7.35
+## 192.2               8.15        7.35
+## 192.3               8.15        7.35
+## 192.4               8.15        7.35
+## 192.5               8.15        7.35
+## 192.6               8.15        7.35
+## 192.7               8.15        7.35
+## 192.8               8.15        7.35
+## 192.9               8.15        7.35
+## 193                 8.15        7.85
+## 193.1               8.15        7.85
+## 193.2               8.15        7.85
+## 193.3               8.15        7.85
+## 193.4               8.15        7.85
+## 193.5               8.15        7.85
+## 193.6               8.15        7.85
+## 193.7               8.15        7.85
+## 193.8               8.15        7.85
+## 193.9               8.15        7.85
+## 193.10              8.15        7.85
+## 194                 8.15        8.35
+## 194.1               8.15        8.35
+## 194.2               8.15        8.35
+## 194.3               8.15        8.35
+## 194.4               8.15        8.35
+## 194.5               8.15        8.35
+## 194.6               8.15        8.35
+## 194.7               8.15        8.35
+## 194.8               8.15        8.35
+## 194.9               8.15        8.35
+## 194.10              8.15        8.35
+## 194.11              8.15        8.35
+## 194.12              8.15        8.35
+## 194.13              8.15        8.35
+## 194.14              8.15        8.35
+## 194.15              8.15        8.35
+## 194.16              8.15        8.35
+## 195                 8.15        8.85
+## 195.1               8.15        8.85
+## 195.2               8.15        8.85
+## 195.3               8.15        8.85
+## 195.4               8.15        8.85
+## 195.5               8.15        8.85
+## 195.6               8.15        8.85
+## 195.7               8.15        8.85
+## 195.8               8.15        8.85
+## 195.9               8.15        8.85
+## 195.10              8.15        8.85
+## 195.11              8.15        8.85
+## 195.12              8.15        8.85
+## 195.13              8.15        8.85
+## 195.14              8.15        8.85
+## 195.15              8.15        8.85
+## 195.16              8.15        8.85
+## 195.17              8.15        8.85
+## 196                 8.15        9.35
+## 196.1               8.15        9.35
+## 196.2               8.15        9.35
+## 196.3               8.15        9.35
+## 196.4               8.15        9.35
+## 196.5               8.15        9.35
+## 196.6               8.15        9.35
+## 196.7               8.15        9.35
+## 196.8               8.15        9.35
+## 196.9               8.15        9.35
+## 196.10              8.15        9.35
+## 196.11              8.15        9.35
+## 197                 8.15        9.85
+## 197.1               8.15        9.85
+## 197.2               8.15        9.85
+## 197.3               8.15        9.85
+## 197.4               8.15        9.85
+## 197.5               8.15        9.85
+## 197.6               8.15        9.85
+## 197.7               8.15        9.85
+## 197.8               8.15        9.85
+## 197.9               8.15        9.85
+## 198                 8.15       10.35
+## 198.1               8.15       10.35
+## 198.2               8.15       10.35
+## 198.3               8.15       10.35
+## 198.4               8.15       10.35
+## 198.5               8.15       10.35
+## 198.6               8.15       10.35
+## 198.7               8.15       10.35
+## 198.8               8.15       10.35
+## 198.9               8.15       10.35
+## 198.10              8.15       10.35
+## 198.11              8.15       10.35
+## 198.12              8.15       10.35
+## 198.13              8.15       10.35
+## 198.14              8.15       10.35
+## 198.15              8.15       10.35
+## 199                 8.15       10.85
+## 199.1               8.15       10.85
+## 199.2               8.15       10.85
+## 199.3               8.15       10.85
+## 199.4               8.15       10.85
+## 199.5               8.15       10.85
+## 199.6               8.15       10.85
+## 199.7               8.15       10.85
+## 199.8               8.15       10.85
+## 199.9               8.15       10.85
+## 200                 8.15       11.35
+## 201                 8.15       11.85
+## 201.1               8.15       11.85
+## 202                 8.15       12.35
+## 202.1               8.15       12.35
+## 202.2               8.15       12.35
+## 203                 8.15       13.85
+## 204                 8.35        5.35
+## 204.1               8.35        5.35
+## 204.2               8.35        5.35
+## 205                 8.35        5.85
+## 205.1               8.35        5.85
+## 205.2               8.35        5.85
+## 205.3               8.35        5.85
+## 205.4               8.35        5.85
+## 205.5               8.35        5.85
+## 206                 8.35        6.35
+## 206.1               8.35        6.35
+## 206.2               8.35        6.35
+## 206.3               8.35        6.35
+## 206.4               8.35        6.35
+## 206.5               8.35        6.35
+## 207                 8.35        6.85
+## 207.1               8.35        6.85
+## 207.2               8.35        6.85
+## 207.3               8.35        6.85
+## 207.4               8.35        6.85
+## 207.5               8.35        6.85
+## 207.6               8.35        6.85
+## 207.7               8.35        6.85
+## 207.8               8.35        6.85
+## 207.9               8.35        6.85
+## 208                 8.35        7.35
+## 208.1               8.35        7.35
+## 209                 8.35        7.85
+## 209.1               8.35        7.85
+## 209.2               8.35        7.85
+## 209.3               8.35        7.85
+## 209.4               8.35        7.85
+## 209.5               8.35        7.85
+## 210                 8.35        8.35
+## 210.1               8.35        8.35
+## 210.2               8.35        8.35
+## 210.3               8.35        8.35
+## 210.4               8.35        8.35
+## 210.5               8.35        8.35
+## 210.6               8.35        8.35
+## 210.7               8.35        8.35
+## 210.8               8.35        8.35
+## 210.9               8.35        8.35
+## 210.10              8.35        8.35
+## 210.11              8.35        8.35
+## 211                 8.35        8.85
+## 211.1               8.35        8.85
+## 211.2               8.35        8.85
+## 211.3               8.35        8.85
+## 211.4               8.35        8.85
+## 211.5               8.35        8.85
+## 211.6               8.35        8.85
+## 212                 8.35        9.35
+## 212.1               8.35        9.35
+## 212.2               8.35        9.35
+## 212.3               8.35        9.35
+## 212.4               8.35        9.35
+## 212.5               8.35        9.35
+## 212.6               8.35        9.35
+## 212.7               8.35        9.35
+## 212.8               8.35        9.35
+## 212.9               8.35        9.35
+## 212.10              8.35        9.35
+## 212.11              8.35        9.35
+## 212.12              8.35        9.35
+## 212.13              8.35        9.35
+## 213                 8.35        9.85
+## 214                 8.35       10.35
+## 214.1               8.35       10.35
+## 214.2               8.35       10.35
+## 214.3               8.35       10.35
+## 215                 8.35       10.85
+## 215.1               8.35       10.85
+## 215.2               8.35       10.85
+## 215.3               8.35       10.85
+## 215.4               8.35       10.85
+## 216                 8.35       11.35
+## 217                 8.35       12.35
+## 218                 8.55        5.35
+## 218.1               8.55        5.35
+## 218.2               8.55        5.35
+## 219                 8.55        5.85
+## 219.1               8.55        5.85
+## 219.2               8.55        5.85
+## 219.3               8.55        5.85
+## 219.4               8.55        5.85
+## 220                 8.55        6.35
+## 220.1               8.55        6.35
+## 220.2               8.55        6.35
+## 220.3               8.55        6.35
+## 220.4               8.55        6.35
+## 220.5               8.55        6.35
+## 221                 8.55        6.85
+## 221.1               8.55        6.85
+## 221.2               8.55        6.85
+## 221.3               8.55        6.85
+## 221.4               8.55        6.85
+## 221.5               8.55        6.85
+## 222                 8.55        7.35
+## 222.1               8.55        7.35
+## 222.2               8.55        7.35
+## 222.3               8.55        7.35
+## 222.4               8.55        7.35
+## 223                 8.55        7.85
+## 223.1               8.55        7.85
+## 223.2               8.55        7.85
+## 223.3               8.55        7.85
+## 224                 8.55        8.35
+## 224.1               8.55        8.35
+## 224.2               8.55        8.35
+## 224.3               8.55        8.35
+## 224.4               8.55        8.35
+## 225                 8.55        8.85
+## 225.1               8.55        8.85
+## 225.2               8.55        8.85
+## 226                 8.55        9.35
+## 226.1               8.55        9.35
+## 226.2               8.55        9.35
+## 226.3               8.55        9.35
+## 226.4               8.55        9.35
+## 226.5               8.55        9.35
+## 227                 8.55        9.85
+## 227.1               8.55        9.85
+## 227.2               8.55        9.85
+## 227.3               8.55        9.85
+## 228                 8.55       10.35
+## 228.1               8.55       10.35
+## 228.2               8.55       10.35
+## 228.3               8.55       10.35
+## 228.4               8.55       10.35
+## 228.5               8.55       10.35
+## 228.6               8.55       10.35
+## 228.7               8.55       10.35
+## 228.8               8.55       10.35
+## 228.9               8.55       10.35
+## 228.10              8.55       10.35
+## 228.11              8.55       10.35
+## 229                 8.55       10.85
+## 229.1               8.55       10.85
+## 229.2               8.55       10.85
+## 229.3               8.55       10.85
+## 229.4               8.55       10.85
+## 230                 8.55       11.35
+## 230.1               8.55       11.35
+## 231                 8.75        5.35
+## 231.1               8.75        5.35
+## 231.2               8.75        5.35
+## 231.3               8.75        5.35
+## 232                 8.75        5.85
+## 232.1               8.75        5.85
+## 232.2               8.75        5.85
+## 232.3               8.75        5.85
+## 232.4               8.75        5.85
+## 232.5               8.75        5.85
+## 232.6               8.75        5.85
+## 233                 8.75        6.35
+## 233.1               8.75        6.35
+## 233.2               8.75        6.35
+## 233.3               8.75        6.35
+## 233.4               8.75        6.35
+## 233.5               8.75        6.35
+## 233.6               8.75        6.35
+## 233.7               8.75        6.35
+## 233.8               8.75        6.35
+## 234                 8.75        6.85
+## 234.1               8.75        6.85
+## 234.2               8.75        6.85
+## 234.3               8.75        6.85
+## 234.4               8.75        6.85
+## 234.5               8.75        6.85
+## 234.6               8.75        6.85
+## 234.7               8.75        6.85
+## 234.8               8.75        6.85
+## 234.9               8.75        6.85
+## 234.10              8.75        6.85
+## 234.11              8.75        6.85
+## 234.12              8.75        6.85
+## 234.13              8.75        6.85
+## 234.14              8.75        6.85
+## 234.15              8.75        6.85
+## 234.16              8.75        6.85
+## 234.17              8.75        6.85
+## 234.18              8.75        6.85
+## 234.19              8.75        6.85
+## 235                 8.75        7.35
+## 235.1               8.75        7.35
+## 235.2               8.75        7.35
+## 235.3               8.75        7.35
+## 236                 8.75        7.85
+## 236.1               8.75        7.85
+## 236.2               8.75        7.85
+## 236.3               8.75        7.85
+## 236.4               8.75        7.85
+## 237                 8.75        8.35
+## 237.1               8.75        8.35
+## 237.2               8.75        8.35
+## 237.3               8.75        8.35
+## 237.4               8.75        8.35
+## 237.5               8.75        8.35
+## 237.6               8.75        8.35
+## 237.7               8.75        8.35
+## 237.8               8.75        8.35
+## 237.9               8.75        8.35
+## 237.10              8.75        8.35
+## 237.11              8.75        8.35
+## 238                 8.75        8.85
+## 238.1               8.75        8.85
+## 238.2               8.75        8.85
+## 238.3               8.75        8.85
+## 238.4               8.75        8.85
+## 238.5               8.75        8.85
+## 238.6               8.75        8.85
+## 238.7               8.75        8.85
+## 239                 8.75        9.35
+## 239.1               8.75        9.35
+## 239.2               8.75        9.35
+## 239.3               8.75        9.35
+## 239.4               8.75        9.35
+## 239.5               8.75        9.35
+## 239.6               8.75        9.35
+## 239.7               8.75        9.35
+## 239.8               8.75        9.35
+## 239.9               8.75        9.35
+## 239.10              8.75        9.35
+## 240                 8.75        9.85
+## 240.1               8.75        9.85
+## 240.2               8.75        9.85
+## 241                 8.75       10.35
+## 241.1               8.75       10.35
+## 241.2               8.75       10.35
+## 241.3               8.75       10.35
+## 241.4               8.75       10.35
+## 241.5               8.75       10.35
+## 241.6               8.75       10.35
+## 241.7               8.75       10.35
+## 242                 8.75       10.85
+## 242.1               8.75       10.85
+## 243                 8.75       11.35
+## 243.1               8.75       11.35
+## 243.2               8.75       11.35
+## 244                 8.75       12.35
+## 245                 8.75       13.35
+## 246                 8.75       13.85
+## 247                 8.95        5.85
+## 247.1               8.95        5.85
+## 247.2               8.95        5.85
+## 248                 8.95        6.35
+## 248.1               8.95        6.35
+## 248.2               8.95        6.35
+## 248.3               8.95        6.35
+## 248.4               8.95        6.35
+## 248.5               8.95        6.35
+## 248.6               8.95        6.35
+## 248.7               8.95        6.35
+## 248.8               8.95        6.35
+## 248.9               8.95        6.35
+## 248.10              8.95        6.35
+## 249                 8.95        6.85
+## 249.1               8.95        6.85
+## 249.2               8.95        6.85
+## 249.3               8.95        6.85
+## 249.4               8.95        6.85
+## 249.5               8.95        6.85
+## 249.6               8.95        6.85
+## 249.7               8.95        6.85
+## 249.8               8.95        6.85
+## 249.9               8.95        6.85
+## 249.10              8.95        6.85
+## 249.11              8.95        6.85
+## 250                 8.95        7.35
+## 250.1               8.95        7.35
+## 250.2               8.95        7.35
+## 250.3               8.95        7.35
+## 250.4               8.95        7.35
+## 250.5               8.95        7.35
+## 250.6               8.95        7.35
+## 250.7               8.95        7.35
+## 250.8               8.95        7.35
+## 250.9               8.95        7.35
+## 251                 8.95        7.85
+## 251.1               8.95        7.85
+## 251.2               8.95        7.85
+## 252                 8.95        8.35
+## 252.1               8.95        8.35
+## 252.2               8.95        8.35
+## 252.3               8.95        8.35
+## 252.4               8.95        8.35
+## 252.5               8.95        8.35
+## 252.6               8.95        8.35
+## 252.7               8.95        8.35
+## 252.8               8.95        8.35
+## 253                 8.95        8.85
+## 253.1               8.95        8.85
+## 254                 8.95        9.35
+## 254.1               8.95        9.35
+## 254.2               8.95        9.35
+## 254.3               8.95        9.35
+## 255                 8.95        9.85
+## 255.1               8.95        9.85
+## 255.2               8.95        9.85
+## 256                 8.95       10.35
+## 256.1               8.95       10.35
+## 256.2               8.95       10.35
+## 256.3               8.95       10.35
+## 256.4               8.95       10.35
+## 257                 8.95       10.85
+## 257.1               8.95       10.85
+## 258                 8.95       11.35
+## 258.1               8.95       11.35
+## 259                 8.95       11.85
+## 260                 8.95       12.35
+## 261                 8.95       13.85
+## 262                 9.15        5.35
+## 262.1               9.15        5.35
+## 263                 9.15        5.85
+## 263.1               9.15        5.85
+## 263.2               9.15        5.85
+## 263.3               9.15        5.85
+## 264                 9.15        6.35
+## 264.1               9.15        6.35
+## 264.2               9.15        6.35
+## 264.3               9.15        6.35
+## 264.4               9.15        6.35
+## 264.5               9.15        6.35
+## 264.6               9.15        6.35
+## 265                 9.15        6.85
+## 265.1               9.15        6.85
+## 265.2               9.15        6.85
+## 265.3               9.15        6.85
+## 265.4               9.15        6.85
+## 265.5               9.15        6.85
+## 265.6               9.15        6.85
+## 265.7               9.15        6.85
+## 265.8               9.15        6.85
+## 266                 9.15        7.35
+## 267                 9.15        7.85
+## 267.1               9.15        7.85
+## 268                 9.15        8.35
+## 268.1               9.15        8.35
+## 268.2               9.15        8.35
+## 268.3               9.15        8.35
+## 268.4               9.15        8.35
+## 268.5               9.15        8.35
+## 268.6               9.15        8.35
+## 269                 9.15        8.85
+## 269.1               9.15        8.85
+## 269.2               9.15        8.85
+## 269.3               9.15        8.85
+## 269.4               9.15        8.85
+## 269.5               9.15        8.85
+## 270                 9.15        9.35
+## 270.1               9.15        9.35
+## 270.2               9.15        9.35
+## 270.3               9.15        9.35
+## 271                 9.15       10.35
+## 271.1               9.15       10.35
+## 271.2               9.15       10.35
+## 271.3               9.15       10.35
+## 271.4               9.15       10.35
+## 272                 9.15       10.85
+## 272.1               9.15       10.85
+## 273                 9.15       11.35
+## 273.1               9.15       11.35
+## 273.2               9.15       11.35
+## 273.3               9.15       11.35
+## 274                 9.35        5.35
+## 275                 9.35        5.85
+## 276                 9.35        6.35
+## 276.1               9.35        6.35
+## 276.2               9.35        6.35
+## 276.3               9.35        6.35
+## 276.4               9.35        6.35
+## 276.5               9.35        6.35
+## 277                 9.35        6.85
+## 278                 9.35        7.35
+## 278.1               9.35        7.35
+## 279                 9.35        7.85
+## 279.1               9.35        7.85
+## 280                 9.35        9.35
+## 280.1               9.35        9.35
+## 280.2               9.35        9.35
+## 280.3               9.35        9.35
+## 280.4               9.35        9.35
+## 281                 9.35        9.85
+## 281.1               9.35        9.85
+## 281.2               9.35        9.85
+## 281.3               9.35        9.85
+## 281.4               9.35        9.85
+## 281.5               9.35        9.85
+## 281.6               9.35        9.85
+## 281.7               9.35        9.85
+## 281.8               9.35        9.85
+## 281.9               9.35        9.85
+## 281.10              9.35        9.85
+## 282                 9.35       10.35
+## 282.1               9.35       10.35
+## 282.2               9.35       10.35
+## 283                 9.55        5.85
+## 284                 9.55        6.35
+## 284.1               9.55        6.35
+## 284.2               9.55        6.35
+## 285                 9.55        6.85
+## 285.1               9.55        6.85
+## 285.2               9.55        6.85
+## 286                 9.55        7.85
+## 286.1               9.55        7.85
+## 287                 9.55        8.35
+## 287.1               9.55        8.35
+## 288                 9.55        8.85
+## 289                 9.55        9.35
+## 290                 9.55       10.35
+## 290.1               9.55       10.35
+## 291                 9.55       10.85
+## 291.1               9.55       10.85
+## 292                 9.75        5.85
+## 292.1               9.75        5.85
+## 293                 9.75        6.35
+## 293.1               9.75        6.35
+## 293.2               9.75        6.35
+## 294                 9.75        6.85
+## 294.1               9.75        6.85
+## 294.2               9.75        6.85
+## 294.3               9.75        6.85
+## 294.4               9.75        6.85
+## 294.5               9.75        6.85
+## 294.6               9.75        6.85
+## 295                 9.75        7.85
+## 296                 9.75        8.35
+## 296.1               9.75        8.35
+## 296.2               9.75        8.35
+## 297                 9.75        8.85
+## 297.1               9.75        8.85
+## 298                 9.75        9.35
+## 299                 9.75       10.35
+## 299.1               9.75       10.35
+## 299.2               9.75       10.35
+## 300                 9.95        5.35
+## 301                 9.95        6.35
+## 301.1               9.95        6.35
+## 302                 9.95        6.85
+## 303                 9.95        7.35
+## 303.1               9.95        7.35
+## 304                 9.95        7.85
+## 304.1               9.95        7.85
+## 305                 9.95        8.35
+## 305.1               9.95        8.35
+## 306                 9.95        8.85
+## 307                 9.95       10.35
+## 307.1               9.95       10.35
+## 308                 9.95       13.85
+## 309                10.15        6.35
+## 310                10.15        7.35
+## 311                10.15        8.35
+## 311.1              10.15        8.35
+## 311.2              10.15        8.35
+## 311.3              10.15        8.35
+## 311.4              10.15        8.35
+## 312                10.15        9.35
+## 312.1              10.15        9.35
+## 312.2              10.15        9.35
+## 313                10.15       10.35
+## 314                10.15       12.35
+## 315                10.35        6.35
+## 316                10.35        8.35
+## 316.1              10.35        8.35
+## 316.2              10.35        8.35
+## 317                10.35        8.85
+## 318                10.55        6.35
+## 319                10.95       10.85</code></pre>
 <hr />
 </div>
 <div id="visualizing-data-in-a-modern-form" class="section level2">
 <h2>Visualizing data in a modern form</h2>
 <p>Visualizing the data in a table similar to that published</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>BCT2a<span class="ot">=</span>BCT2 <span class="sc">%&gt;%</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabyl</span>(length_corpuscles, body_lenght)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#BCT2a</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>BCT3<span class="ot">&lt;-</span>BCT2a <span class="sc">%&gt;%</span> </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span>,<span class="dv">10</span><span class="sc">:</span><span class="dv">19</span>, <span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>BCT3<span class="sc">$</span>length_corpuscles <span class="ot">=</span> <span class="fu">as.factor</span>(BCT3<span class="sc">$</span>length_corpuscles)</span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(BCT3) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="fu">md</span>(<span class="st">&quot;Body length of tadpoles&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tab_style</span>(</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> <span class="fu">everything</span>()),</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">style     =</span> <span class="fu">list</span>(</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="co">#Give a thick border below</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cell_borders</span>(<span class="at">sides =</span> <span class="st">&quot;bottom&quot;</span>, <span class="at">weight =</span> <span class="fu">px</span>(<span class="dv">3</span>)),</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>       <span class="co">#Make text bold</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">&quot;bold&quot;</span>)</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>     )</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>   ) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a> <span class="fu">tab_style</span>(</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_borders</span>(<span class="at">sides =</span> <span class="st">&quot;right&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, </span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                         <span class="at">style =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">weight =</span> <span class="fu">px</span>(<span class="dv">3</span>)),</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(length_corpuscles)</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="st">&quot;Pearson, K. (1909). A Biometric Study of the Red Blood Corpuscles of the Common Tadpole (Rana Temporaria), from the Measurements of Ernest Warren. Biometrika, 402-419.&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data_color</span>(</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">&quot;5.35&quot;</span>, <span class="st">&quot;5.85&quot;</span>, <span class="st">&quot;6.35&quot;</span>, <span class="st">&quot;6.85&quot;</span>, <span class="st">&quot;7.35&quot;</span>, <span class="st">&quot;7.85&quot;</span>, <span class="st">&quot;8.35&quot;</span>,</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&quot;8.85&quot;</span>,  <span class="st">&quot;9.35&quot;</span>, <span class="st">&quot;9.85&quot;</span>, <span class="st">&quot;10.35&quot;</span>,    <span class="st">&quot;10.85&quot;</span>,    <span class="st">&quot;11.35&quot;</span>,    <span class="st">&quot;11.85&quot;</span>,    <span class="st">&quot;12.35&quot;</span>,    <span class="st">&quot;13.35&quot;</span>,    <span class="st">&quot;13.84&quot;</span>,    <span class="st">&quot;13.85&quot;</span>),</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">colors =</span> scales<span class="sc">::</span><span class="fu">col_numeric</span>(</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">palette =</span> <span class="fu">c</span>(<span class="st">&quot;white&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;brown&quot;</span>),</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">domain =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">30</span>))</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<div id="uswlyrppku" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>BCT2a<span class="ot">=</span>BCT2 <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabyl</span>(length_corpuscles, body_lenght)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>BCT2a</span></code></pre></div>
+<pre><code>##  length_corpuscles 10.35 10.85 11.35 11.85 12.35 13.35 13.84 13.85 5.35 5.85
+##               4.95     1     0     0     0     0     0     0     0    0    0
+##               5.15     0     0     1     0     0     0     0     0    0    0
+##               5.35     0     0     1     0     0     0     0     0    0    0
+##               5.55     2     0     0     0     1     1     0     0    0    0
+##               5.75     4     0     0     0     0     0     0     0    0    0
+##               5.95    10     2     2     0     1     2     0     0    0    0
+##               6.15     4     2     2     1     3     1     0     2    0    1
+##               6.35    16     3     1     1     4     2     0     0    0    0
+##               6.55     0     1     2     1     3     0     1     0    2    0
+##               6.75    12     3     4     2     4     2     0     0    0    1
+##               6.95    17    13     2     1     3     3     0     3    1    4
+##               7.15    19    11     4     3    16     7     0     5    6    3
+##               7.35    15     9     8     1     5     1     0     1    4    3
+##               7.55     9     5     3     4     3     1     0     2    0    9
+##               7.75    11    11     3     3    10     1     0     0    5   10
+##               7.95    18    11     5     5     5     1     0     3   13   10
+##               8.15    16    10     1     2     3     0     0     1    5    5
+##               8.35     4     5     1     0     1     0     0     0    3    6
+##               8.55    12     5     2     0     0     0     0     0    3    5
+##               8.75     8     2     3     0     1     1     0     1    4    7
+##               8.95     5     2     2     1     1     0     0     1    0    3
+##               9.15     5     2     4     0     0     0     0     0    2    4
+##               9.35     3     0     0     0     0     0     0     0    1    1
+##               9.55     2     2     0     0     0     0     0     0    0    1
+##               9.75     3     0     0     0     0     0     0     0    0    2
+##               9.95     2     0     0     0     0     0     0     1    1    0
+##              10.15     1     0     0     0     1     0     0     0    0    0
+##              10.35     0     0     0     0     0     0     0     0    0    0
+##              10.55     0     0     0     0     0     0     0     0    0    0
+##              10.95     0     1     0     0     0     0     0     0    0    0
+##  6.35 6.85 7.35 7.85 8.35 8.85 9.35 9.85
+##     0    0    0    0    0    0    0    0
+##     1    0    1    0    0    0    0    0
+##     0    0    1    0    0    0    0    0
+##     0    0    1    0    0    0    0    0
+##     0    0    3    0    1    1    1    0
+##     1    0    1    1    1    1    2    5
+##     1    1    2    1    2    7    2    4
+##     1    2    3    4    4    5    2    4
+##     3    1    2    1    4    9    3    3
+##     2    2    3    7    9    2    7   10
+##     7    8    8    9   14    9   11    9
+##     9   11    7   18   20   15   16   12
+##     7   17   10   11   15   10    8    9
+##     5    6    6    5   27   15   11    3
+##    13   20   10   18   22   12   21   10
+##     8   17    5   12   24   15    8    9
+##    10   21   10   11   17   18   12   10
+##     6   10    2    6   12    7   14    1
+##     6    6    5    4    5    3    6    4
+##     9   20    4    5   12    8   11    3
+##    11   12   10    3    9    2    4    3
+##     7    9    1    2    7    6    4    0
+##     6    1    2    2    0    0    5   11
+##     3    3    0    2    2    1    1    0
+##     3    7    0    1    3    2    1    0
+##     2    1    2    2    2    1    0    0
+##     1    0    1    0    5    0    3    0
+##     1    0    0    0    3    1    0    0
+##     1    0    0    0    0    0    0    0
+##     0    0    0    0    0    0    0    0</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>BCT3<span class="ot">&lt;-</span>BCT2a <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span>,<span class="dv">10</span><span class="sc">:</span><span class="dv">19</span>, <span class="dv">2</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>BCT3<span class="sc">$</span>length_corpuscles <span class="ot">=</span> <span class="fu">as.factor</span>(BCT3<span class="sc">$</span>length_corpuscles)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>BCT3</span></code></pre></div>
+<pre><code>##  length_corpuscles 5.35 5.85 6.35 6.85 7.35 7.85 8.35 8.85 9.35 9.85 10.35
+##               4.95    0    0    0    0    0    0    0    0    0    0     1
+##               5.15    0    0    1    0    1    0    0    0    0    0     0
+##               5.35    0    0    0    0    1    0    0    0    0    0     0
+##               5.55    0    0    0    0    1    0    0    0    0    0     2
+##               5.75    0    0    0    0    3    0    1    1    1    0     4
+##               5.95    0    0    1    0    1    1    1    1    2    5    10
+##               6.15    0    1    1    1    2    1    2    7    2    4     4
+##               6.35    0    0    1    2    3    4    4    5    2    4    16
+##               6.55    2    0    3    1    2    1    4    9    3    3     0
+##               6.75    0    1    2    2    3    7    9    2    7   10    12
+##               6.95    1    4    7    8    8    9   14    9   11    9    17
+##               7.15    6    3    9   11    7   18   20   15   16   12    19
+##               7.35    4    3    7   17   10   11   15   10    8    9    15
+##               7.55    0    9    5    6    6    5   27   15   11    3     9
+##               7.75    5   10   13   20   10   18   22   12   21   10    11
+##               7.95   13   10    8   17    5   12   24   15    8    9    18
+##               8.15    5    5   10   21   10   11   17   18   12   10    16
+##               8.35    3    6    6   10    2    6   12    7   14    1     4
+##               8.55    3    5    6    6    5    4    5    3    6    4    12
+##               8.75    4    7    9   20    4    5   12    8   11    3     8
+##               8.95    0    3   11   12   10    3    9    2    4    3     5
+##               9.15    2    4    7    9    1    2    7    6    4    0     5
+##               9.35    1    1    6    1    2    2    0    0    5   11     3
+##               9.55    0    1    3    3    0    2    2    1    1    0     2
+##               9.75    0    2    3    7    0    1    3    2    1    0     3
+##               9.95    1    0    2    1    2    2    2    1    0    0     2
+##              10.15    0    0    1    0    1    0    5    0    3    0     1
+##              10.35    0    0    1    0    0    0    3    1    0    0     0
+##              10.55    0    0    1    0    0    0    0    0    0    0     0
+##              10.95    0    0    0    0    0    0    0    0    0    0     0
+##  10.85 11.35 11.85 12.35 13.35 13.84 13.85
+##      0     0     0     0     0     0     0
+##      0     1     0     0     0     0     0
+##      0     1     0     0     0     0     0
+##      0     0     0     1     1     0     0
+##      0     0     0     0     0     0     0
+##      2     2     0     1     2     0     0
+##      2     2     1     3     1     0     2
+##      3     1     1     4     2     0     0
+##      1     2     1     3     0     1     0
+##      3     4     2     4     2     0     0
+##     13     2     1     3     3     0     3
+##     11     4     3    16     7     0     5
+##      9     8     1     5     1     0     1
+##      5     3     4     3     1     0     2
+##     11     3     3    10     1     0     0
+##     11     5     5     5     1     0     3
+##     10     1     2     3     0     0     1
+##      5     1     0     1     0     0     0
+##      5     2     0     0     0     0     0
+##      2     3     0     1     1     0     1
+##      2     2     1     1     0     0     1
+##      2     4     0     0     0     0     0
+##      0     0     0     0     0     0     0
+##      2     0     0     0     0     0     0
+##      0     0     0     0     0     0     0
+##      0     0     0     0     0     0     1
+##      0     0     0     1     0     0     0
+##      0     0     0     0     0     0     0
+##      0     0     0     0     0     0     0
+##      1     0     0     0     0     0     0</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(BCT3) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="fu">md</span>(<span class="st">&quot;Body length of tadpoles&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">tab_style</span>(</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> <span class="fu">everything</span>()),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">style     =</span> <span class="fu">list</span>(</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>       <span class="co">#Give a thick border below</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cell_borders</span>(<span class="at">sides =</span> <span class="st">&quot;bottom&quot;</span>, <span class="at">weight =</span> <span class="fu">px</span>(<span class="dv">3</span>)),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>       <span class="co">#Make text bold</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">&quot;bold&quot;</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>     )</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>   ) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a> <span class="fu">tab_style</span>(</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_borders</span>(<span class="at">sides =</span> <span class="st">&quot;right&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, </span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>                         <span class="at">style =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">weight =</span> <span class="fu">px</span>(<span class="dv">3</span>)),</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(length_corpuscles)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="st">&quot;Pearson, K. (1909). A Biometric Study of the Red Blood Corpuscles of the Common Tadpole (Rana Temporaria), from the Measurements of Ernest Warren. Biometrika, 402-419.&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data_color</span>(</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">&quot;5.35&quot;</span>, <span class="st">&quot;5.85&quot;</span>, <span class="st">&quot;6.35&quot;</span>, <span class="st">&quot;6.85&quot;</span>, <span class="st">&quot;7.35&quot;</span>, <span class="st">&quot;7.85&quot;</span>, <span class="st">&quot;8.35&quot;</span>,</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&quot;8.85&quot;</span>,  <span class="st">&quot;9.35&quot;</span>, <span class="st">&quot;9.85&quot;</span>, <span class="st">&quot;10.35&quot;</span>,    <span class="st">&quot;10.85&quot;</span>,    <span class="st">&quot;11.35&quot;</span>,    <span class="st">&quot;11.85&quot;</span>,    <span class="st">&quot;12.35&quot;</span>,    <span class="st">&quot;13.35&quot;</span>,    <span class="st">&quot;13.84&quot;</span>,    <span class="st">&quot;13.85&quot;</span>),</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">colors =</span> scales<span class="sc">::</span><span class="fu">col_numeric</span>(</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">palette =</span> <span class="fu">c</span>(<span class="st">&quot;white&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;brown&quot;</span>),</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">domain =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">30</span>))</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div id="owukwgvzff" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#uswlyrppku .gt_table {
+#owukwgvzff .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -941,7 +2902,7 @@ div.tocify {
   border-left-color: #D3D3D3;
 }
 
-#uswlyrppku .gt_heading {
+#owukwgvzff .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -953,33 +2914,37 @@ div.tocify {
   border-right-color: #D3D3D3;
 }
 
-#uswlyrppku .gt_title {
+#owukwgvzff .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
   padding-top: 4px;
   padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
 
-#uswlyrppku .gt_subtitle {
+#owukwgvzff .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
   padding-top: 0;
   padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-#uswlyrppku .gt_bottom_border {
+#owukwgvzff .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uswlyrppku .gt_col_headings {
+#owukwgvzff .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -994,7 +2959,7 @@ div.tocify {
   border-right-color: #D3D3D3;
 }
 
-#uswlyrppku .gt_col_heading {
+#owukwgvzff .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1014,7 +2979,7 @@ div.tocify {
   overflow-x: hidden;
 }
 
-#uswlyrppku .gt_column_spanner_outer {
+#owukwgvzff .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1026,15 +2991,15 @@ div.tocify {
   padding-right: 4px;
 }
 
-#uswlyrppku .gt_column_spanner_outer:first-child {
+#owukwgvzff .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uswlyrppku .gt_column_spanner_outer:last-child {
+#owukwgvzff .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uswlyrppku .gt_column_spanner {
+#owukwgvzff .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1046,8 +3011,11 @@ div.tocify {
   width: 100%;
 }
 
-#uswlyrppku .gt_group_heading {
-  padding: 8px;
+#owukwgvzff .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1068,7 +3036,7 @@ div.tocify {
   vertical-align: middle;
 }
 
-#uswlyrppku .gt_empty_group_heading {
+#owukwgvzff .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1083,15 +3051,15 @@ div.tocify {
   vertical-align: middle;
 }
 
-#uswlyrppku .gt_from_md > :first-child {
+#owukwgvzff .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uswlyrppku .gt_from_md > :last-child {
+#owukwgvzff .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uswlyrppku .gt_row {
+#owukwgvzff .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1110,7 +3078,7 @@ div.tocify {
   overflow-x: hidden;
 }
 
-#uswlyrppku .gt_stub {
+#owukwgvzff .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1119,10 +3087,29 @@ div.tocify {
   border-right-style: solid;
   border-right-width: 2px;
   border-right-color: #D3D3D3;
-  padding-left: 12px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-#uswlyrppku .gt_summary_row {
+#owukwgvzff .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#owukwgvzff .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#owukwgvzff .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1132,17 +3119,26 @@ div.tocify {
   padding-right: 5px;
 }
 
-#uswlyrppku .gt_first_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
+#owukwgvzff .gt_first_summary_row {
   border-top-style: solid;
-  border-top-width: 2px;
   border-top-color: #D3D3D3;
 }
 
-#uswlyrppku .gt_grand_summary_row {
+#owukwgvzff .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#owukwgvzff .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#owukwgvzff .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1152,7 +3148,7 @@ div.tocify {
   padding-right: 5px;
 }
 
-#uswlyrppku .gt_first_grand_summary_row {
+#owukwgvzff .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1162,11 +3158,11 @@ div.tocify {
   border-top-color: #D3D3D3;
 }
 
-#uswlyrppku .gt_striped {
+#owukwgvzff .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uswlyrppku .gt_table_body {
+#owukwgvzff .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1175,7 +3171,7 @@ div.tocify {
   border-bottom-color: #D3D3D3;
 }
 
-#uswlyrppku .gt_footnotes {
+#owukwgvzff .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1189,13 +3185,16 @@ div.tocify {
   border-right-color: #D3D3D3;
 }
 
-#uswlyrppku .gt_footnote {
+#owukwgvzff .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-#uswlyrppku .gt_sourcenotes {
+#owukwgvzff .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1209,44 +3208,71 @@ div.tocify {
   border-right-color: #D3D3D3;
 }
 
-#uswlyrppku .gt_sourcenote {
+#owukwgvzff .gt_sourcenote {
   font-size: 90%;
-  padding: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-#uswlyrppku .gt_left {
+#owukwgvzff .gt_left {
   text-align: left;
 }
 
-#uswlyrppku .gt_center {
+#owukwgvzff .gt_center {
   text-align: center;
 }
 
-#uswlyrppku .gt_right {
+#owukwgvzff .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uswlyrppku .gt_font_normal {
+#owukwgvzff .gt_font_normal {
   font-weight: normal;
 }
 
-#uswlyrppku .gt_font_bold {
+#owukwgvzff .gt_font_bold {
   font-weight: bold;
 }
 
-#uswlyrppku .gt_font_italic {
+#owukwgvzff .gt_font_italic {
   font-style: italic;
 }
 
-#uswlyrppku .gt_super {
+#owukwgvzff .gt_super {
   font-size: 65%;
 }
 
-#uswlyrppku .gt_footnote_marks {
+#owukwgvzff .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
-  font-size: 65%;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#owukwgvzff .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#owukwgvzff .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#owukwgvzff .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#owukwgvzff .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
 }
 </style>
 <table class="gt_table">
@@ -1863,29 +3889,29 @@ div.tocify {
 </div>
 <div id="basic-descriptive-stats-of-tadpoles-cells-of-tadpoles" class="section level2">
 <h2>Basic descriptive stats of tadpoles cells of tadpoles</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#BCT2</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Mean and standar deviation of body length</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>BCT2 <span class="sc">%&gt;%</span> </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">meanBL=</span><span class="fu">mean</span>(body_lenght),</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">SD=</span><span class="fu">sd</span>(body_lenght))</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#BCT2</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Mean and standar deviation of body length</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>BCT2 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">meanBL=</span><span class="fu">mean</span>(body_lenght),</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">SD=</span><span class="fu">sd</span>(body_lenght))</span></code></pre></div>
 <pre><code>##     meanBL       SD
 ## 1 8.781195 1.916942</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Mean and standar deviation of length of corpuscules</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>BCT2 <span class="sc">%&gt;%</span> </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_BC=</span><span class="fu">mean</span>(length_corpuscles),</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">SD_BL=</span><span class="fu">sd</span>(length_corpuscles))</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Mean and standar deviation of length of corpuscules</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>BCT2 <span class="sc">%&gt;%</span> </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">mean_BC=</span><span class="fu">mean</span>(length_corpuscles),</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">SD_BL=</span><span class="fu">sd</span>(length_corpuscles))</span></code></pre></div>
 <pre><code>##    mean_BC     SD_BL
 ## 1 7.766535 0.9219505</code></pre>
 <hr />
 </div>
 <div id="regression-analisis-of-tadpole-lenght-and-corpuscule-length-mm" class="section level2">
 <h2>Regression analisis of tadpole lenght and corpuscule length (mm)</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(BCT2, <span class="fu">aes</span>(body_lenght, length_corpuscles))<span class="sc">+</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_count</span>(<span class="fu">aes</span>(<span class="at">color=</span>..n..))<span class="sc">+</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm)<span class="sc">+</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">&#39;legend&#39;</span>)<span class="sc">+</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">size=</span><span class="st">&quot;none&quot;</span>)<span class="sc">+</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_gradient</span>(<span class="at">low =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">high =</span> <span class="st">&quot;orange&quot;</span>, <span class="at">na.value =</span> <span class="cn">NA</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(BCT2, <span class="fu">aes</span>(body_lenght, length_corpuscles))<span class="sc">+</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_count</span>(<span class="fu">aes</span>(<span class="at">color=</span>..n..))<span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm)<span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">&#39;legend&#39;</span>)<span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">size=</span><span class="st">&quot;none&quot;</span>)<span class="sc">+</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_gradient</span>(<span class="at">low =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">high =</span> <span class="st">&quot;orange&quot;</span>, <span class="at">na.value =</span> <span class="cn">NA</span>)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <p><img src="RED_blood_cells_Tadpoles_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <hr />
@@ -1902,24 +3928,24 @@ div.tocify {
 <div id="replicating-the-figure" class="section level1">
 <h1>Replicating the figure</h1>
 <p>We can get a similar type of figure, by limiting the area that is visualized</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(BCT2, <span class="fu">aes</span>(body_lenght, length_corpuscles))<span class="sc">+</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_count</span>(<span class="fu">aes</span>(<span class="at">color=</span>..n..))<span class="sc">+</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm)<span class="sc">+</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">&#39;legend&#39;</span>)<span class="sc">+</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">size=</span><span class="st">&quot;none&quot;</span>)<span class="sc">+</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_gradient</span>(<span class="at">low =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">high =</span> <span class="st">&quot;orange&quot;</span>, <span class="at">na.value =</span> <span class="cn">NA</span>)<span class="sc">+</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim=</span> <span class="fu">c</span>(<span class="fl">7.0</span>, <span class="fl">8.4</span>), <span class="at">xlim=</span><span class="fu">c</span>(<span class="fl">5.85</span>, <span class="fl">14.85</span>))<span class="sc">+</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="fl">4.85</span>, <span class="fl">14.85</span>, <span class="at">len=</span><span class="dv">11</span>))<span class="sc">+</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Body length of tadpole&quot;</span>)<span class="sc">+</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Length of blood corpuscules&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(BCT2, <span class="fu">aes</span>(body_lenght, length_corpuscles))<span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_count</span>(<span class="fu">aes</span>(<span class="at">color=</span>..n..))<span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm)<span class="sc">+</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">&#39;legend&#39;</span>)<span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">size=</span><span class="st">&quot;none&quot;</span>)<span class="sc">+</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_gradient</span>(<span class="at">low =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">high =</span> <span class="st">&quot;orange&quot;</span>, <span class="at">na.value =</span> <span class="cn">NA</span>)<span class="sc">+</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim=</span> <span class="fu">c</span>(<span class="fl">7.0</span>, <span class="fl">8.4</span>), <span class="at">xlim=</span><span class="fu">c</span>(<span class="fl">5.85</span>, <span class="fl">14.85</span>))<span class="sc">+</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="fl">4.85</span>, <span class="fl">14.85</span>, <span class="at">len=</span><span class="dv">11</span>))<span class="sc">+</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Body length of tadpole&quot;</span>)<span class="sc">+</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Length of blood corpuscules&quot;</span>)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <p><img src="RED_blood_cells_Tadpoles_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <hr />
 <div id="regression-analisis" class="section level2">
 <h2>Regression analisis</h2>
 <p>Evaluation if the regression model</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>model<span class="ot">=</span><span class="fu">lm</span>(length_corpuscles<span class="sc">~</span>body_lenght, <span class="at">data=</span>BCT2)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>model<span class="ot">=</span><span class="fu">lm</span>(length_corpuscles<span class="sc">~</span>body_lenght, <span class="at">data=</span>BCT2)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = length_corpuscles ~ body_lenght, data = BCT2)
@@ -1944,8 +3970,11 @@ div.tocify {
 <h2>Correlation analysis</h2>
 <p>On page 405 of the paper Pearson calculates the Pearson Correlation coefficient as r= -0.23</p>
 <p>The same result is found here.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(BCT2<span class="sc">$</span>length_corpuscles, BCT2<span class="sc">$</span>body_lenght)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(BCT2<span class="sc">$</span>length_corpuscles, BCT2<span class="sc">$</span>body_lenght)</span></code></pre></div>
 <pre><code>## [1] -0.2335369</code></pre>
+</div>
+<div id="reproduce-other-figures" class="section level2">
+<h2>Reproduce other figures</h2>
 </div>
 </div>
 

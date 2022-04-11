@@ -228,3 +228,6 @@ The same result is found here.
 cor(BCT2$length_corpuscles, BCT2$body_lenght)
 ```
 
+
+## Reproduce other figures
+
