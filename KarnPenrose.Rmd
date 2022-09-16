@@ -92,40 +92,65 @@ Create a data frame for all death **0** and surviving babies **1**.
 -   arrange (sort) by age of mother or weight (your preference)
 
 ```{r include=FALSE}
-df=as.data.frame(T2i)%>%
+df=as.data.frame(T2i) %>%
   mutate(survivors = total_birth - non_survivors)
+
 ## untable non-survivors
 df1<- untable(df[,c(1,2,4,5)], num = df[,"non_survivors"])%>%
   filter(non_survivors >0)%>%
   mutate(Alive_Dead = ifelse(non_survivors >0,0, NA))
 df1
+
+```
+
+```{r}
 ## untable survivors
-df2<- untable(df[,c(1,2,5,4)], num = df[,"survivors"])%>%
-  filter(survivors >0)%>%
+df2<- untable(df[,c(1,2,5,4)], num = df[,"survivors"]) %>%
+  filter(survivors >0) %>%
   mutate(Alive_Dead = ifelse(survivors >0, 1, NA))
 df2
+```
 
+
+
+```{r}
 df5=bind_rows(df1, df2)%>%
     mutate(sex = "male")# Function in dplyr
 df5 %>% arrange(mother_age)
 row.names(df5)<-NULL  # this removes the row names
 df5 %>% arrange(mother_age)
 
+```
 
+
+
+
+
+
+```{r}
 af=as.data.frame(T2ii)%>%
   mutate(survivors = total_birth - non_survivors)
 head(af)
+
+
 ## untable non-survivors
-af1<- untable(af[,c(1,2,4,5)], num = af[,"non_survivors"])%>%
-  filter(non_survivors >0)%>%
-  mutate(Alive_Dead = ifelse(non_survivors >0,0, NA))
+af1<- untable(af[,c(1,3,4,5)], num = af[,2]) %>%
+  filter(non_survivors >0) %>%
+  mutate(Alive_Dead = ifelse(non_survivors > 0,0, NA))
+
 af1
+
+```
+
+```{r}
 ## untable survivors
 af2<- untable(af[,c(1,2,5,4)], num = af[,"survivors"])%>%
   filter(survivors >0)%>%
   mutate(Alive_Dead = ifelse(survivors >0, 1, NA))
 af2
+```
 
+```{r}
 af5=bind_rows(af1, af2)%>%
   mutate(sex = "female")# Function in dplyr
 af5 %>% arrange(mother_age)

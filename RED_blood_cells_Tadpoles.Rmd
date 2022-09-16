@@ -32,7 +32,7 @@ Introduction by Karl Pearson: Extract
   > On leaving for Natal in 1902 to take up his duties at the Government Museum, Pietermaritzburg, Dr WaiTen placed in my bands a quantity of material,
 the reductions of which will be published with many other data in a forthcoming memoir on homotyposis. Among this material were measurements on the red blood corpuscles of 71 tadpoles from a pond at Hendon. These measurements were, for several reasons, of peculiar interest to me. I had been working at the blood corpuscles of frogs, and had met with several difficulties in the investigation. One group of these difficulties turned on the problem of the "small sample," and the second set on the doubt which arose in my own mind as to whether the size of the cell in the individual of any species can be considered as independent of the bulk or age of the individual.
 
-The paper can be downloaded from this [link](Data/Red_blood_cells/RED_BLOOD_CORPUSCLES_RANA_1909.pdf)
+The original manuscript can be downloaded from this [link](Data/Red_blood_cells/RED_BLOOD_CORPUSCLES_RANA_1909.pdf)
 
 ***
 
@@ -91,7 +91,7 @@ BCT[10:14,]
 
 ```{r}
 BCT2=untable(BCT[,c(1,2)], num =BCT[,3])
-BCT2
+head(BCT2)
 
 ```
 
@@ -105,6 +105,11 @@ Visualizing the data in a table similar to that published
 BCT2a=BCT2 %>% 
   tabyl(length_corpuscles, body_lenght)
 BCT2a
+```
+
+
+
+```{r}
 BCT3<-BCT2a %>% 
   select(1,10:19, 2:9)
 BCT3$length_corpuscles = as.factor(BCT3$length_corpuscles)
