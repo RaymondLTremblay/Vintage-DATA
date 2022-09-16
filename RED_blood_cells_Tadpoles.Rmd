@@ -41,7 +41,7 @@ Here we look at the data from Appendix A
 ![TableA](Graficos/Table_A_Blood_Cells_Tadpoles.jpg)
 
 
-In this table we have the body lenght of the tadpoles and the length of the red Blood Cells. The data is available  [here](DATA/Red_blood_cells/Table_A_lenCorpuscles_Bodylen.xlsx) in an Excel file. To facilitate categorizing the information in the file the first value of the range is used of body length and length of blood corpuscles are shown and not the range of the category as in the table. 
+In this table we have the body lenght of the tadpoles and the length of the red Blood Cells. The data is available  [HERE](DATA/Red_blood_cells/Table_A_lenCorpuscles_Bodylen.xlsx) in an Excel file. To facilitate categorizing the information in the file the first value of the range is used of body length and length of blood corpuscles are shown and not the range of the category as in the table. 
 
 ***
 
@@ -67,6 +67,9 @@ BCT=as.data.frame(Table_A_lenCorpuscles_Bodylen) # VERY IMPORTANT STEP, convert 
 #BCT$length_corpuscles=as.character(BCT$length_corpuscles)
 #BCT$body_lenght=as.character(BCT$body_lenght)
 ```
+
+
+
 
 ***
 
